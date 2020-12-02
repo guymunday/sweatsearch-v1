@@ -1,0 +1,105 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  acf_fields(first: $first, after: $after) {
+    nodes {
+      ancestors(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
+      wpChildren: children(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
+      content
+      contentType {
+        node {
+          id
+        }
+      }
+      databaseId
+      date
+      dateGmt
+      desiredSlug
+      enclosure
+      guid
+      homepage {
+        fieldGroupName
+        heroSection {
+          backgroundImage {
+            __typename
+            id
+          }
+          fieldGroupName
+          paragraph
+          title
+        }
+        image {
+          __typename
+          id
+        }
+        plans {
+          fieldGroupName
+          plan {
+            bulletPoints
+            description
+            fieldGroupName
+            link
+            planType
+            price
+          }
+        }
+        thumbnails {
+          fieldGroupName
+          image {
+            __typename
+            id
+          }
+          info
+          title
+        }
+        whatIsSweatsearch {
+          appImage {
+            __typename
+            id
+          }
+          fieldGroupName
+          paragraph
+          title
+        }
+      }
+      id
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+      link
+      modified
+      modifiedGmt
+      wpParent: parent {
+        node {
+          id
+          __typename
+        }
+      }
+      parentDatabaseId
+      parentId
+      slug
+      status
+      template {
+        templateName
+        __typename
+      }
+      title
+      uri
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
