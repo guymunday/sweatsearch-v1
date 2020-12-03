@@ -1,6 +1,7 @@
 import React from "react"
 import Wrapper from "./Wrapper"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -19,7 +20,7 @@ const Header = () => {
     <HeaderWrapper>
       <Wrapper>
         <HeaderContainer>
-          <div className="logo">
+          <Link to="/" className="logo">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="173.238"
@@ -117,7 +118,7 @@ const Header = () => {
                 </g>
               </g>
             </svg>
-          </div>
+          </Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18.5"
