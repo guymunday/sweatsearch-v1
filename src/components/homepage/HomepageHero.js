@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../Button"
+import Button from "../buttons/Button"
 import Wrapper from "../Wrapper"
 import Img from "gatsby-image"
 import Banner from "../Banner"
@@ -31,10 +31,13 @@ const HeroBackground = styled.div`
     top: 0;
     .banner {
       position: absolute;
-      height: 100%;
-      width: 1000%;
+      height: 100;
+      width: 1200%;
       top: 0;
       left: -50%;
+      svg {
+        height: 100%;
+      }
     }
   }
 `
@@ -71,6 +74,11 @@ const HeroFlex = styled.div`
   }
   p {
     max-width: 400px;
+    margin: 30px 0;
+  }
+  .button-flex {
+    display: flex;
+    gap: 30px;
   }
 `
 
@@ -136,8 +144,10 @@ const HomepageHero = ({ data }) => {
             </span>
           </h1>
           <div dangerouslySetInnerHTML={{ __html: data.paragraph }} />
-          <Button link="" text="Sign up as PT" />
-          <Button link="" text="Sign up as client" />
+          <div className="button-flex">
+            <Button link="/">Sign up as PT</Button>
+            <Button link="/">Sign up as client</Button>
+          </div>
         </HeroFlex>
       </Wrapper>
     </HeroContainer>

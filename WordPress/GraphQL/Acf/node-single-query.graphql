@@ -23,7 +23,55 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     dateGmt
     desiredSlug
     enclosure
+    flexible {
+      content {
+        __typename
+        ... on Acf_Flexible_Content_Copy {
+          copy
+          fieldGroupName
+        }
+        ... on Acf_Flexible_Content_CopyAndImage {
+          copy
+          fieldGroupName
+          image {
+            __typename
+            id
+          }
+        }
+        ... on Acf_Flexible_Content_Image {
+          fieldGroupName
+          image {
+            __typename
+            id
+          }
+        }
+        ... on Acf_Flexible_Content_ImageAndCopy {
+          copy
+          fieldGroupName
+          image {
+            __typename
+            id
+          }
+        }
+      }
+      fieldGroupName
+    }
+    generate {
+      fieldGroupName
+      generate
+    }
     guid
+    heroSection {
+      fieldGroupName
+      hero {
+        fieldGroupName
+        image {
+          __typename
+          id
+        }
+        introParagraph
+      }
+    }
     homepage {
       fieldGroupName
       heroSection {
@@ -33,7 +81,6 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
         }
         fieldGroupName
         paragraph
-        title
       }
       image {
         __typename
@@ -88,6 +135,36 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     parentId
     slug
     status
+    system {
+      benefits {
+        backgroundImage {
+          __typename
+          id
+        }
+        benefits {
+          benefit
+          fieldGroupName
+        }
+        fieldGroupName
+      }
+      clients {
+        copy
+        fieldGroupName
+        image {
+          __typename
+          id
+        }
+      }
+      fieldGroupName
+      trainers {
+        copy
+        fieldGroupName
+        image {
+          __typename
+          id
+        }
+      }
+    }
     template {
       templateName
       __typename

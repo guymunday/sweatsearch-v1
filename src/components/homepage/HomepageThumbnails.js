@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Wrapper from "../Wrapper"
-import ButtonInvert from "../ButtonInvert"
+import ButtonInvert from "../buttons/ButtonInvert"
 import Img from "gatsby-image"
 
 const ThumbSection = styled.section`
@@ -115,7 +115,6 @@ const HomepageThumbnails = ({ data }) => {
                   )}
                 </h3>
                 <p>{t.info}</p>
-                <ButtonInvert text="Find out more" />
               </div>
             )
           })}

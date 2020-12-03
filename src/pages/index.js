@@ -41,7 +41,6 @@ export const indexQuery = graphql`
           }
           heroSection {
             paragraph
-            title
             backgroundImage {
               localFile {
                 childImageSharp {

@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components"
 import reset from "../assets/styles/reset"
 import global from "../assets/styles/global"
 import Header from "./Header"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const GlobalStyles = createGlobalStyle`
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Header />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
