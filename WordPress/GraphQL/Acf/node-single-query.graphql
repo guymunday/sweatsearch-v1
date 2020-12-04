@@ -133,6 +133,41 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     }
     parentDatabaseId
     parentId
+    refImage {
+      fieldGroupName
+      image {
+        __typename
+        id
+      }
+    }
+    references {
+      fieldGroupName
+      heroReference
+      ptReference
+    }
+    referral {
+      clientPt {
+        copy
+        fieldGroupName
+      }
+      credits {
+        copy
+        fieldGroupName
+        image {
+          __typename
+          id
+        }
+      }
+      fieldGroupName
+      ratingSystem {
+        appImage {
+          __typename
+          id
+        }
+        copy
+        fieldGroupName
+      }
+    }
     slug
     status
     system {

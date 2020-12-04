@@ -17,6 +17,7 @@ const SplitHeroWrapper = styled.section`
     @media screen and (max-width: 768px) {
       height: 400px;
       order: 2;
+      margin: 50px 0 100px 0;
     }
     .copy-inner {
       max-width: 400px;

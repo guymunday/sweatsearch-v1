@@ -14,8 +14,10 @@ const ImageSection = styled.section`
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 450px;
-    width: 450px;
+    width: 50%;
+    height: 50%;
+    min-height: 300px;
+    min-width: 300px;
     transform: translate(-50%, -50%);
     svg {
       width: 100%;
@@ -24,9 +26,13 @@ const ImageSection = styled.section`
   }
 `
 
-const BackgroundImageStyles = styled(BackgroundImage)`
+export const BackgroundImageStyles = styled(BackgroundImage)`
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   position: absolute;
   background-attachment: fixed;
   background-position: center;
@@ -39,6 +45,7 @@ const HomepageBigImage = ({ image }) => {
     image,
     `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))`,
   ].reverse()
+
   return (
     <ImageSection style={{ backgroundImage: image }}>
       <BackgroundImageStyles

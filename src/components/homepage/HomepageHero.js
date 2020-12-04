@@ -79,6 +79,10 @@ const HeroFlex = styled.div`
   .button-flex {
     display: flex;
     gap: 30px;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      width: 60%;
+    }
   }
 `
 

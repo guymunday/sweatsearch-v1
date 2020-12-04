@@ -8,6 +8,7 @@ const globalCss = css`
     --black: #000000;
     --green: #68db7e;
     --white: #ffffff;
+    --offwhite: #f4f2f2;
     --heading: "Bebas Neue";
     --body: "Source Sans Pro", sans-serif;
     width: 100%;

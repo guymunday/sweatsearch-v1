@@ -14,6 +14,10 @@ const PlanInner = styled.div`
   display: flex;
   justify-content: center;
   gap: 30px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
   .thumb {
     border: 1px solid var(--white);
     max-width: 300px;
@@ -73,9 +77,8 @@ const HomepagePlans = ({ data }) => {
       <Wrapper>
         <PlanInner>
           {data.map((p, index) => {
-            console.log(p)
             return (
-              <div className="thumb">
+              <div className="thumb" key={index}>
                 <p>
                   <span className="price">{p.plan.price}</span> / Month
                 </p>

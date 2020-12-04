@@ -1,85 +1,23 @@
 import React from "react"
-import styled from "styled-components"
 import Img from "gatsby-image"
 import Wrapper from "../Wrapper"
-import Button from "../buttons/Button"
+import { AppSection } from "../homepage/HomepageAbout"
 
-export const AppSection = styled.section`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  gap: 30px;
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
-  }
-  .inner {
-    flex: 1;
-    padding: 100px 0;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    .copy {
-      max-width: 350px;
-      position: relative;
-      @media screen and (max-width: 600px) {
-        max-width: 100%;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-size: 3rem;
-      }
-      div {
-        margin: 30px 0;
-      }
-      .copy-inner {
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          font-size: 3rem;
-        }
-        p {
-          margin-top: 30px;
-        }
-      }
-    }
-  }
-  .app-mockup {
-    flex: 1;
-    max-width: 500px;
-    margin-top: -50px;
-    margin-bottom: -100px;
-    .gatsby-image-wrapper {
-      width: 100%;
-    }
-  }
-`
-
-const HomepageAbout = ({ data }) => {
+const RatingSystem = ({ image, copy }) => {
   return (
     <Wrapper>
       <AppSection>
         <div className="app-mockup">
-          <Img
-            fluid={data.appImage.localFile.childImageSharp.fluid}
-            alt="SweatSearch App"
-          />
+          <Img fluid={image} alt="SweatSearch App" />
         </div>
         <div className="inner">
           <div className="copy">
-            <h2>{data.title}</h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="209.231"
               height="3.808"
               viewBox="0 0 209.231 3.808"
+              style={{ position: "absolute", top: "22%", left: 0 }}
             >
               <g transform="translate(-677.189 -3514.931)">
                 <path
@@ -90,8 +28,10 @@ const HomepageAbout = ({ data }) => {
                 />
               </g>
             </svg>
-            <div dangerouslySetInnerHTML={{ __html: data.paragraph }} />
-            <Button link="the-system">The system</Button>
+            <div
+              className="copy-inner"
+              dangerouslySetInnerHTML={{ __html: copy }}
+            />
           </div>
         </div>
       </AppSection>
@@ -99,4 +39,4 @@ const HomepageAbout = ({ data }) => {
   )
 }
 
-export default HomepageAbout
+export default RatingSystem
