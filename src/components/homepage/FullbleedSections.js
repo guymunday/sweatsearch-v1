@@ -14,6 +14,9 @@ const FullbleedInner = styled.div`
   color: var(--white);
   h2 {
     font-size: 5rem;
+    @media screen and (max-width: 500px) {
+      font-size: 3.5rem;
+    }
   }
   p {
     max-width: 400px;

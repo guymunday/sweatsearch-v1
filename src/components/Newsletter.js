@@ -37,13 +37,19 @@ const NewsletterContainer = styled.section`
     margin: 30px 0;
   }
   form {
+    display: flex;
+    gap: 1rem;
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+    }
     .email {
       background: transparent;
       border: 1px var(--white) solid;
       padding: 5px;
-      margin-right: 1rem;
+      flex: 2;
       @media screen and (max-width: 500px) {
         margin-bottom: 1rem;
+        width: 100%;
       }
       ::placeholder {
         color: var(--white);
@@ -154,7 +160,6 @@ const Newsletter = () => {
           type="email"
           name="email"
           placeholder="Email"
-          size="35"
         />
         <span className="submit">
           <input type="submit" name="sumbit" value="Sign up" />

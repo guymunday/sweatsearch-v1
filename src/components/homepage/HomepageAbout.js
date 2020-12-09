@@ -56,6 +56,7 @@ export const AppSection = styled.section`
     flex: 1;
     max-width: 500px;
     margin-bottom: -150px;
+    z-index: 2;
     .gatsby-image-wrapper {
       width: 100%;
     }

@@ -13,6 +13,9 @@ const NavStyles = styled(motion.nav)`
   z-index: 9999;
   overflow: scroll;
   flex-direction: column;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
   .button-container {
     display: flex;
     padding: 30px;
