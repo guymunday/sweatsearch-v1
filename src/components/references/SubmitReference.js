@@ -39,6 +39,9 @@ export const SubmitRefWrapper = styled.div`
     position: absolute;
     top: 0;
     left: 50%;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   }
   form {
     position: relative;

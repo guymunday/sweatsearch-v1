@@ -143,7 +143,8 @@ const HomepageHero = ({ data }) => {
       <Wrapper>
         <HeroFlex>
           <h1>
-            Fit starts{" "}
+            <span>Fit</span>{" "}
+            <span>starts</span>{" "}
             <span>
               <span>here</span>
               <svg

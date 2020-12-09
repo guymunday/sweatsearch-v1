@@ -6,7 +6,7 @@ import Image from "./slices/Image"
 import ImageAndCopy from "./slices/ImageAndCopy"
 
 const Content = styled.div`
-  padding: 100px 0;
+  padding: 100px 0 0 0;
 `
 
 export default class SliceZone extends Component {

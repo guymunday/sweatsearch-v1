@@ -39,6 +39,7 @@ const NewsletterContainer = styled.section`
   form {
     display: flex;
     gap: 1rem;
+    justify-content: center;
     @media screen and (max-width: 500px) {
       flex-direction: column;
     }
@@ -47,6 +48,7 @@ const NewsletterContainer = styled.section`
       border: 1px var(--white) solid;
       padding: 5px;
       flex: 2;
+      max-width: 350px;
       @media screen and (max-width: 500px) {
         margin-bottom: 1rem;
         width: 100%;

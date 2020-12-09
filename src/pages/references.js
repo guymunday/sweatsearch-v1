@@ -13,8 +13,14 @@ const HeroReferenceContainer = styled.div`
   margin-top: 100px;
   display: flex;
   gap: 30px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
   .copy {
     flex: 1;
+    @media screen and (max-width: 768px) {
+      order: 2;
+    }
     h2 {
       font-size: 3rem;
       position: relative;

@@ -9,7 +9,7 @@ const RatingSystem = ({ image, copy }) => {
     <Wrapper>
       <AppSection>
         <div className="app-mockup">
-          <ParallaxBox yOffset={150} triggerPoint={0.4}>
+          <ParallaxBox yOffset={150} triggerPoint={0.7}>
             <Img fluid={image} alt="SweatSearch App" />
           </ParallaxBox>
         </div>
