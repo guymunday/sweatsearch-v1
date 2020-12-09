@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import ButtonInvert from "../buttons/ButtonInvert"
 import Wrapper from "../Wrapper"
 
 const PlanSection = styled.section`

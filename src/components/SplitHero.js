@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 const SplitHeroWrapper = styled.section`
   display: flex;
   gap: 30px;
-  min-height: 90vh;
+  min-height: 100vh;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }

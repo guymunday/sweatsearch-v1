@@ -9,21 +9,22 @@ const ButtonStyled = styled(Link)`
   position: relative;
   cursor: pointer;
   display: inline-block;
-  background: var(--green);
+  background: var(--black);
+  border: none;
   padding: 12px 28px;
-  color: var(--black);
+  color: var(--white);
   border-radius: 23px;
   text-align: center;
   line-height: 1;
   text-decoration: none;
 `
 
-function Button({ link, children }) {
+function ButtonA({ link, children }) {
   return (
-    <ButtonStyled to={link}>
+    <ButtonStyled href={link}>
       {children} <Ripple color={"#fff"} duration={1000} />
     </ButtonStyled>
   )
 }
 
-export default Button
+export default ButtonA

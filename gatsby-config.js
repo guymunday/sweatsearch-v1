@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `http://sweatsearch.local/graphql`,
+        url: `http://3.250.192.195/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,

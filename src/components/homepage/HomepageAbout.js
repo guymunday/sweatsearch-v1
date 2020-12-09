@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import Wrapper from "../Wrapper"
 import Button from "../buttons/Button"
+import ParallaxBox from "../ParallaxBox"
 
 export const AppSection = styled.section`
   display: flex;
@@ -54,8 +55,7 @@ export const AppSection = styled.section`
   .app-mockup {
     flex: 1;
     max-width: 500px;
-    margin-top: -50px;
-    margin-bottom: -100px;
+    margin-bottom: -150px;
     .gatsby-image-wrapper {
       width: 100%;
     }
@@ -67,10 +67,12 @@ const HomepageAbout = ({ data }) => {
     <Wrapper>
       <AppSection>
         <div className="app-mockup">
-          <Img
-            fluid={data.appImage.localFile.childImageSharp.fluid}
-            alt="SweatSearch App"
-          />
+          <ParallaxBox yOffset={150} triggerPoint={0.7}>
+            <Img
+              fluid={data.appImage.localFile.childImageSharp.fluid}
+              alt="SweatSearch App"
+            />
+          </ParallaxBox>
         </div>
         <div className="inner">
           <div className="copy">

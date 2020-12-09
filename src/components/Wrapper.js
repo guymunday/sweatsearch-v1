@@ -5,7 +5,7 @@ const WrapperContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   padding: 0 30px;
-  margin: auto;
+  margin: 0 auto;
 `
 const Wrapper = ({ children }) => {
   return <WrapperContainer>{children}</WrapperContainer>

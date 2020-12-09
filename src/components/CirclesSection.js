@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import {motion} from "framer-motion"
 
 const CirclesSectionStyles = styled.section`
   width: 100%;
@@ -8,7 +9,7 @@ const CirclesSectionStyles = styled.section`
   background: var(--offwhite);
   display: flex;
   gap: 30px;
-  min-height: 90vh;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   .circle-1 {
@@ -99,12 +100,18 @@ const CirclesSectionStyles = styled.section`
 const CirclesSection = ({ image, copy }) => {
   return (
     <CirclesSectionStyles>
-      <svg
+      <motion.svg
         version="1.1"
         x="0px"
         y="0px"
         viewBox="0 0 324.505 324.506"
         className="circle-1"
+        initial={{ x: 0, y: 0 }}
+        animate={{
+          x: [-30, -20, -10, 0, 10, 20, 30],
+          y: [30, 20, 10, 0, -10, -20, -30],
+          transition: { yoyo: Infinity, duration: 3, ease: "linear" },
+        }}
       >
         <g>
           <path
@@ -114,7 +121,7 @@ const CirclesSection = ({ image, copy }) => {
 		s44.524,99.253,99.252,99.253c54.729,0,99.253-44.524,99.253-99.253S216.981,63,162.252,63z"
           />
         </g>
-      </svg>
+      </motion.svg>
       <div className="copy">
         <div className="copy-inner">
           <svg
@@ -142,12 +149,18 @@ const CirclesSection = ({ image, copy }) => {
       <div className="image">
         <Img fluid={image} alt="" />
       </div>
-      <svg
+      <motion.svg
         version="1.1"
         x="0px"
         y="0px"
         viewBox="0 0 324.505 324.506"
         className="circle-2"
+        initial={{ x: 0, y: 0 }}
+        animate={{
+          y: [-30, -20, -10, 0, 10, 20, 30],
+          x: [30, 20, 10, 0, -10, -20, -30],
+          transition: { yoyo: Infinity, duration: 3, ease: "linear" },
+        }}
       >
         <g>
           <path
@@ -157,7 +170,7 @@ const CirclesSection = ({ image, copy }) => {
 		s44.524,99.253,99.252,99.253c54.729,0,99.253-44.524,99.253-99.253S216.981,63,162.252,63z"
           />
         </g>
-      </svg>
+      </motion.svg>
     </CirclesSectionStyles>
   )
 }

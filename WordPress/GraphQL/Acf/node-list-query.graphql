@@ -57,6 +57,27 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
         }
         fieldGroupName
       }
+      footer {
+        contactDetails
+        fieldGroupName
+        footerMenu {
+          fieldGroupName
+          menuItems {
+            fieldGroupName
+            link
+            menuItem
+          }
+        }
+        smallPrint
+        socialLinks {
+          fieldGroupName
+          socialLink {
+            fieldGroupName
+            link
+            platform
+          }
+        }
+      }
       generate {
         fieldGroupName
         generate
@@ -75,6 +96,19 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       }
       homepage {
         fieldGroupName
+        fullBleedSections {
+          fieldGroupName
+          section {
+            backgroundImage {
+              __typename
+              id
+            }
+            copy
+            fieldGroupName
+            link
+            title
+          }
+        }
         heroSection {
           backgroundImage {
             __typename
@@ -124,6 +158,18 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
         }
       }
       link
+      menu {
+        fieldGroupName
+        menuItems {
+          fieldGroupName
+          menuItem {
+            fieldGroupName
+            link
+            pageName
+          }
+        }
+        signUpLink
+      }
       modified
       modifiedGmt
       wpParent: parent {
@@ -134,18 +180,6 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       }
       parentDatabaseId
       parentId
-      refImage {
-        fieldGroupName
-        image {
-          __typename
-          id
-        }
-      }
-      references {
-        fieldGroupName
-        heroReference
-        ptReference
-      }
       referral {
         clientPt {
           copy

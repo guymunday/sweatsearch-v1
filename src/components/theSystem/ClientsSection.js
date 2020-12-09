@@ -8,7 +8,7 @@ const ClientsSectionStyles = styled.section`
   background: var(--green);
   display: flex;
   gap: 30px;
-  min-height: 90vh;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   @media screen and (max-width: 1024px) {

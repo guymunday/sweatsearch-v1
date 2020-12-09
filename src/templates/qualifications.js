@@ -6,7 +6,7 @@ import SliceZone from "../components/qualifications/SliceZone"
 import styled from "styled-components"
 import Newsletter from "../components/Newsletter"
 
-const Title = styled.div`
+export const Title = styled.div`
   padding: 150px 0 0 0;
   h1 {
     position: relative;

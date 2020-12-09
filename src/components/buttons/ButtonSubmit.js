@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Ripple from "./Ripple"
 
 const ButtonStyled = styled.input`
   overflow: hidden;
@@ -23,7 +22,7 @@ const ButtonStyled = styled.input`
 `
 
 function ButtonSubmit() {
-  return <ButtonStyled type="submit" />
+  return <ButtonStyled type="submit" name="submit" />
 }
 
 export default ButtonSubmit

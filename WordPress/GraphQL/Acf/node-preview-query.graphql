@@ -56,6 +56,27 @@ query PREVIEW_QUERY($id: ID!) {
       }
       fieldGroupName
     }
+    footer {
+      contactDetails
+      fieldGroupName
+      footerMenu {
+        fieldGroupName
+        menuItems {
+          fieldGroupName
+          link
+          menuItem
+        }
+      }
+      smallPrint
+      socialLinks {
+        fieldGroupName
+        socialLink {
+          fieldGroupName
+          link
+          platform
+        }
+      }
+    }
     generate {
       fieldGroupName
       generate
@@ -74,6 +95,19 @@ query PREVIEW_QUERY($id: ID!) {
     }
     homepage {
       fieldGroupName
+      fullBleedSections {
+        fieldGroupName
+        section {
+          backgroundImage {
+            __typename
+            id
+          }
+          copy
+          fieldGroupName
+          link
+          title
+        }
+      }
       heroSection {
         backgroundImage {
           __typename
@@ -123,6 +157,18 @@ query PREVIEW_QUERY($id: ID!) {
       }
     }
     link
+    menu {
+      fieldGroupName
+      menuItems {
+        fieldGroupName
+        menuItem {
+          fieldGroupName
+          link
+          pageName
+        }
+      }
+      signUpLink
+    }
     modified
     modifiedGmt
     wpParent: parent {
@@ -133,18 +179,6 @@ query PREVIEW_QUERY($id: ID!) {
     }
     parentDatabaseId
     parentId
-    refImage {
-      fieldGroupName
-      image {
-        __typename
-        id
-      }
-    }
-    references {
-      fieldGroupName
-      heroReference
-      ptReference
-    }
     referral {
       clientPt {
         copy

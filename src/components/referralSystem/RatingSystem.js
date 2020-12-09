@@ -2,13 +2,16 @@ import React from "react"
 import Img from "gatsby-image"
 import Wrapper from "../Wrapper"
 import { AppSection } from "../homepage/HomepageAbout"
+import ParallaxBox from "../ParallaxBox"
 
 const RatingSystem = ({ image, copy }) => {
   return (
     <Wrapper>
       <AppSection>
         <div className="app-mockup">
-          <Img fluid={image} alt="SweatSearch App" />
+          <ParallaxBox yOffset={150} triggerPoint={0.4}>
+            <Img fluid={image} alt="SweatSearch App" />
+          </ParallaxBox>
         </div>
         <div className="inner">
           <div className="copy">

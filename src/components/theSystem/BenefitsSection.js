@@ -3,21 +3,66 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
-const BenefitsSectionStyles = styled.section`
+export const BenefitsSectionStyles = styled.section`
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
   .overlay {
     position: absolute;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     height: 100%;
     width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .circle-1 {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: -250px;
+    left: -250px;
+    z-index: 1;
+    @media screen and (max-width: 768px) {
+      width: 400px;
+      height: 400px;
+      top: -175px;
+      left: -175px;
+    }
+  }
+  .circle-2 {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    bottom: -250px;
+    right: -250px;
+    z-index: 3;
+    @media screen and (max-width: 768px) {
+      width: 400px;
+      height: 400px;
+      bottom: -175px;
+      right: -175px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 400px;
+      height: 400px;
+      bottom: -225px;
+      right: -175px;
+    }
+  }
+  .bars-svg {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    bottom: -250px;
+    right: -200px;
+    z-index: 3;
   }
 `
 
-const BackgroundImg = styled(Img)`
+export const BackgroundImg = styled(Img)`
   position: absolute;
   top: 0;
   left: 0;
@@ -34,6 +79,7 @@ const BenefitsFlex = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  padding: 100px 0;
   .benefits-inner {
     width: 100%;
     max-width: 1200px;

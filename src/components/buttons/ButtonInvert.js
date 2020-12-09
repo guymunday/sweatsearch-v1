@@ -10,7 +10,7 @@ const ButtonStyled = styled(Link)`
   cursor: pointer;
   display: inline-block;
   border: 1px solid var(--black);
-  padding: 12px 18px;
+  padding: 12px 28px;
   color: var(--black);
   border-radius: 23px;
   text-align: center;
