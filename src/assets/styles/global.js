@@ -59,6 +59,16 @@ const globalCss = css`
       margin-bottom: -0.4em;
     }
   }
+  a {
+    color: var(--white);
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s ease;
+    :hover {
+      color: var(--green);
+    }
+  }
 `
 
 export default globalCss

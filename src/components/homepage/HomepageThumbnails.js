@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import Wrapper from "../Wrapper"
 import Img from "gatsby-image"
-import ParallaxBox from "../ParallaxBox"
 
 const ThumbSection = styled.section`
   width: 100%;

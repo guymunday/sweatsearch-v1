@@ -28,6 +28,7 @@ const PlanInner = styled.div`
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    padding: 100px 0;
   }
   .thumb {
     border: 1px solid var(--white);

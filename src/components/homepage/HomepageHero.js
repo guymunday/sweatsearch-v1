@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Button from "../buttons/Button"
 import Wrapper from "../Wrapper"
 import Img from "gatsby-image"
-import Banner from "../Banner"
 import { motion, useTransform, useViewportScroll } from "framer-motion"
 
 const HeroContainer = styled.section`
@@ -143,8 +142,7 @@ const HomepageHero = ({ data }) => {
       <Wrapper>
         <HeroFlex>
           <h1>
-            <span>Fit</span>{" "}
-            <span>starts</span>{" "}
+            <span>Fit</span> <span>starts</span>{" "}
             <span>
               <span>here</span>
               <svg

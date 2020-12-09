@@ -16,6 +16,9 @@ const ButtonStyled = styled(Link)`
   text-align: center;
   line-height: 1;
   text-decoration: none;
+  :hover {
+    color: var(--white);
+  }
 `
 
 function Button({ link, children }) {

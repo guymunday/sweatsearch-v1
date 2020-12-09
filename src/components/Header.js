@@ -25,10 +25,6 @@ const HeaderContainer = styled.header`
     display: flex;
     gap: 30px;
     align-items: center;
-    .sign-up {
-      color: var(--white);
-      text-decoration: none;
-    }
   }
 `
 
@@ -386,6 +382,7 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
                 className="sign-up"
                 href="https://www.sweatsearch.com"
                 target="_blank"
+                rel="noreferrer"
               >
                 Sign up
               </a>

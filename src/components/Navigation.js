@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 const NavStyles = styled(motion.nav)`
   position: fixed;

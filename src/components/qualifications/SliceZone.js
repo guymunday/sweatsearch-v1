@@ -13,17 +13,16 @@ export default class SliceZone extends Component {
   render() {
     const { allSlices } = this.props
     const slice = allSlices.map(s => {
-      console.log(s)
       switch (s.fieldGroupName) {
         // These are the API IDs of the slices
         case "acf_Flexible_Content_Copy":
-          return <BodyText key={Math.random()} input={s.copy} />
+          return s.copy ? <BodyText key={Math.random()} input={s.copy} /> : null
         case "acf_Flexible_Content_Image":
-          return <Image key={Math.random()} input={s.image} />
+          return s.image ? <Image key={Math.random()} input={s.image} /> : null
         case "acf_Flexible_Content_CopyAndImage":
-          return <CopyAndImage key={Math.random()} input={s} />
+          return s ? <CopyAndImage key={Math.random()} input={s} /> : null
         case "acf_Flexible_Content_ImageAndCopy":
-          return <ImageAndCopy key={Math.random()} input={s} />
+          return s ? <ImageAndCopy key={Math.random()} input={s} /> : null
         default:
           return null
       }

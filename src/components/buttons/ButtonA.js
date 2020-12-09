@@ -17,11 +17,14 @@ const ButtonStyled = styled(Link)`
   text-align: center;
   line-height: 1;
   text-decoration: none;
+  :hover {
+    color: var(--white);
+  }
 `
 
 function ButtonA({ link, children }) {
   return (
-    <ButtonStyled href={link}>
+    <ButtonStyled href={link} rel="noreferrer" target="_blank">
       {children} <Ripple color={"#fff"} duration={1000} />
     </ButtonStyled>
   )

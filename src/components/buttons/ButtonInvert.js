@@ -16,12 +16,16 @@ const ButtonStyled = styled(Link)`
   text-align: center;
   line-height: 1;
   text-decoration: none;
+  :hover {
+    color: var(--white);
+    background: var(--black);
+  }
 `
 
 function ButtonInvert({ link, children }) {
   return (
     <ButtonStyled to={link}>
-      {children} <Ripple color={"#000"} duration={1000} />
+      {children} <Ripple color={"#fff"} duration={1000} />
     </ButtonStyled>
   )
 }
