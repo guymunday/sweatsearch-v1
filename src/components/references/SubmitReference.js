@@ -84,10 +84,15 @@ export const SubmitRefWrapper = styled.div`
         border: none;
         background: var(--black);
         color: var(--white);
-        padding: 5px 28px;
+        padding: 6px 28px;
         border-radius: 23px;
         cursor: pointer;
         font-size: 1rem;
+        transition: 0.3s ease;
+        :hover {
+          color: var(--black);
+          background: var(--white);
+        }
       }
     }
   }

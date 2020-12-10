@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import ButtonInvert from "../buttons/ButtonInvert"
 import Wrapper from "../Wrapper"
+import { useInView } from "react-intersection-observer"
+import { motion, useAnimation } from "framer-motion"
 
 const PlanSection = styled.section`
   width: 100%;
@@ -83,13 +85,34 @@ const PlanInner = styled.div`
 `
 
 const HomepagePlans = ({ data }) => {
+  const animation = useAnimation()
+
+  const [featured, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.4,
+        },
+      })
+    }
+  }, [animation, inView])
+
   return (
-    <PlanSection>
-      <svg
+    <PlanSection ref={featured}>
+      <motion.svg
         className="banner-svg"
         width="900.701"
         height="253.059"
         viewBox="0 0 900.701 253.059"
+        initial={{ x: -1000, opacity: 0 }}
+        animate={animation}
       >
         <g
           id="Group_136"
@@ -121,7 +144,7 @@ const HomepagePlans = ({ data }) => {
             transform="translate(168.396 1351.926)"
           />
         </g>
-      </svg>
+      </motion.svg>
       <Wrapper>
         <PlanInner>
           {data.map((p, index) => {

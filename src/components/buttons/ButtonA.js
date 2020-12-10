@@ -18,7 +18,8 @@ const ButtonStyled = styled(Link)`
   line-height: 1;
   text-decoration: none;
   :hover {
-    color: var(--white);
+    color: var(--black);
+    background: var(--green);
   }
 `
 

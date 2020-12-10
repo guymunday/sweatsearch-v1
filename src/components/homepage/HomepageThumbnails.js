@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Wrapper from "../Wrapper"
 import Img from "gatsby-image"
+import { motion } from "framer-motion"
 
 const ThumbSection = styled.section`
   width: 100%;
@@ -49,7 +50,11 @@ const HomepageThumbnails = ({ data }) => {
         <ThumbFlex>
           {data.map((t, index) => {
             return (
-              <div className="inner" key={index}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="inner"
+                key={index}
+              >
                 <Img
                   fluid={t.image.localFile.childImageSharp.fluid}
                   alt={t.title}
@@ -122,7 +127,7 @@ const HomepageThumbnails = ({ data }) => {
                   )}
                 </h3>
                 <p>{t.info}</p>
-              </div>
+              </motion.div>
             )
           })}
         </ThumbFlex>

@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import ParallaxBox from "../ParallaxBox"
+import ParallaxUpDown from "../ParallaxUpDown"
 
 const ClientsSectionStyles = styled.section`
   width: 100%;
@@ -88,9 +90,17 @@ const ClientsSection = ({ image, copy }) => {
           transform="translate(397.045 2.224)"
         />
       </svg>
-      <div className="image">
+      {/* <ParallaxBox yOffset={0} triggerPoint={0} className="image">
         <Img fluid={image} alt="clients" />
-      </div>
+      </ParallaxBox> */}
+      <ParallaxUpDown
+        yOffset={100}
+        triggerPoint={1}
+        endPoint={1000}
+        className="image"
+      >
+        <Img fluid={image} alt="clients" />
+      </ParallaxUpDown>
       <div className="copy">
         <div className="copy-inner">
           <svg

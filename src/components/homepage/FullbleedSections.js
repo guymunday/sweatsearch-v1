@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import Button from "../buttons/Button"
 import {
@@ -6,7 +6,8 @@ import {
   BenefitsSectionStyles,
 } from "../theSystem/BenefitsSection"
 import Wrapper from "../Wrapper"
-import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { motion, useAnimation } from "framer-motion"
 
 const FullbleedInner = styled.div`
   position: relative;
@@ -25,9 +26,28 @@ const FullbleedInner = styled.div`
 `
 
 const FullbleedSections = ({ sections }) => {
+  const animation = useAnimation()
+
+  const [featured, inView] = useInView({
+    threshold: 0.8,
+    triggerOnce: true,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.6,
+        },
+      })
+    }
+  }, [animation, inView])
+
   return sections.map((s, index) => {
     return (
-      <BenefitsSectionStyles key={index}>
+      <BenefitsSectionStyles key={index} ref={featured}>
         {index % 2 === 0 ? (
           <motion.svg
             initial={{ x: 0, y: 0 }}
@@ -77,21 +97,16 @@ const FullbleedSections = ({ sections }) => {
           </motion.svg>
         ) : (
           <motion.svg
-            initial={{ x: "-100%" }}
-            animate={{
-              x: 0,
-              transition: {
-                duration: 2,
-              },
-            }}
             className="bars-svg"
             width="900.701"
             height="253.059"
             viewBox="0 0 900.701 253.059"
+            initial={{ opacity: 0, x: "-600%" }}
+            animate={animation}
           >
             <g
-              id="Group_147"
-              data-name="Group 147"
+              id="Group_136"
+              data-name="Group 136"
               transform="translate(110.168 -1349.702)"
             >
               <path
@@ -99,28 +114,24 @@ const FullbleedSections = ({ sections }) => {
                 data-name="Path 120"
                 d="M509.729,250.835,321.435-2.2l48.824-.024,64.531.024L622.136,250.835Z"
                 transform="translate(-431.604 1351.926)"
-                fill="#fff"
               />
               <path
                 id="Path_123"
                 data-name="Path 123"
                 d="M509.729,250.835,321.435-2.2l48.824-.024,64.531.024L622.136,250.835Z"
                 transform="translate(-30.604 1351.926)"
-                fill="#fff"
               />
               <path
                 id="Path_121"
                 data-name="Path 121"
                 d="M509.729,250.835,321.435-2.2l48.824-.024,64.531.024L622.136,250.835Z"
                 transform="translate(-232.604 1351.926)"
-                fill="#fff"
               />
               <path
                 id="Path_122"
                 data-name="Path 122"
                 d="M509.729,250.835,321.435-2.2l48.824-.024,64.531.024L622.136,250.835Z"
                 transform="translate(168.396 1351.926)"
-                fill="#fff"
               />
             </g>
           </motion.svg>

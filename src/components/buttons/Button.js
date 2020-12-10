@@ -18,6 +18,7 @@ const ButtonStyled = styled(Link)`
   text-decoration: none;
   :hover {
     color: var(--white);
+    background: var(--black);
   }
 `
 

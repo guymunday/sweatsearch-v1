@@ -53,12 +53,15 @@ export const BenefitsSectionStyles = styled.section`
     }
   }
   .bars-svg {
-    width: 600px;
-    height: 600px;
     position: absolute;
-    bottom: -250px;
-    right: -200px;
-    z-index: 3;
+    bottom: -10%;
+    right: -10%;
+    z-index: 1;
+    width: 70%;
+    fill: var(--white);
+    @media screen and (max-width: 768px) {
+      bottom: -16%;
+    }
   }
 `
 
