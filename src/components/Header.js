@@ -21,10 +21,19 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
+  .hamburger {
+    transition: 0.3s ease;
+  }
+  .hamburger:hover {
+    fill: var(--green) !important;
+  }
   .buttons {
     display: flex;
     gap: 30px;
     align-items: center;
+    .sign-up:hover {
+      color: var(--green) !important;
+    }
   }
 `
 
@@ -383,6 +392,7 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
                 href="https://www.sweatsearch.com"
                 target="_blank"
                 rel="noreferrer"
+                style={{ color: whiteLogo ? "var(--white)" : "var(--black)" }}
               >
                 Sign up
               </a>
@@ -394,6 +404,7 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
                 role="button"
                 style={{ fill: whiteLogo ? "#fff" : "#000" }}
                 whileTap={{ scale: 0.9 }}
+                className="hamburger"
               >
                 <rect width="100" height="8"></rect>
                 <rect y="30" width="100" height="8"></rect>
