@@ -108,8 +108,12 @@ const reset = css`
   [hidden] {
     display: none !important;
   }
+  textarea,
+  input.text,
   input[type="text"],
-  input[type="button"] {
+  input[type="button"],
+  input[type="submit"],
+  .input-checkbox {
     -webkit-appearance: none;
     border-radius: 0;
   }
