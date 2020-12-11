@@ -10,6 +10,9 @@ export const BenefitsSectionStyles = styled.section`
   display: flex;
   align-items: center;
   overflow: hidden;
+  @media screen and (min-height: 800px) {
+    min-height: 80vh;
+  }
   .overlay {
     position: absolute;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));

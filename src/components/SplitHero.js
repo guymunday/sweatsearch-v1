@@ -6,6 +6,9 @@ import { motion } from "framer-motion"
 const SplitHeroWrapper = styled.section`
   display: flex;
   min-height: 100vh;
+  @media screen and (min-height: 800px) {
+    min-height: 80vh;
+  }
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -24,6 +27,9 @@ const SplitHeroWrapper = styled.section`
       align-self: center;
       h1 {
         font-size: 5rem;
+        @media screen and (max-width: 768px) {
+          font-size: 3rem;
+        }
       }
       svg {
         margin-top: -10px;

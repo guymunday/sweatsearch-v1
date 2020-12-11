@@ -29,7 +29,7 @@ const FullbleedSections = ({ sections }) => {
   const animation = useAnimation()
 
   const [featured, inView] = useInView({
-    threshold: 0.8,
+    threshold: 0.1,
     triggerOnce: true,
   })
 

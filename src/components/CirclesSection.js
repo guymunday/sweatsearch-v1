@@ -12,6 +12,9 @@ const CirclesSectionStyles = styled.section`
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  @media screen and (min-height: 800px) {
+    min-height: 80vh;
+  }
   .circle-1 {
     width: 600px;
     height: 600px;
@@ -55,6 +58,9 @@ const CirclesSectionStyles = styled.section`
     flex: 1;
     @media screen and (max-width: 768px) {
       height: 400px;
+    }
+    @media screen and (max-width: 500px) {
+      height: 300px;
     }
     .gatsby-image-wrapper {
       min-width: 100%;

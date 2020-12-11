@@ -7,6 +7,9 @@ const PlanSection = styled.section`
   background: var(--green);
   min-height: 100vh;
   position: relative;
+  @media screen and (min-height: 800px) {
+    min-height: 80vh;
+  }
   .banner-svg {
     position: absolute;
     top: -18%;

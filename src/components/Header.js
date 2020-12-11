@@ -23,17 +23,6 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 30px 0;
   align-items: baseline;
-  .logo {
-    width: 200px;
-    height: 50px;
-    @media screen and (max-width: 768px) {
-      width: 30px;
-    }
-    svg {
-      width: 100%;
-      height: 100%;
-    }
-  }
   .hamburger {
     transition: 0.3s ease;
     @media screen and (max-width: 768px) {
@@ -73,7 +62,12 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
           <HeaderContainer>
             <Link to="/" className="logo">
               {isSmall ? (
-                <svg x="0px" y="0px" viewBox="0 0 17.25 28.859">
+                <svg
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 17.25 28.859"
+                  style={{ width: 30 }}
+                >
                   <path
                     fill={whiteLogo || monoLogo ? "#ffffff" : "#68DB7E"}
                     d="M16.674,17.334c-0.772-1.993-3.979-5.487-6.321-8.038c-0.571-0.622-1.064-1.159-1.45-1.6L8.665,7.427
@@ -100,6 +94,7 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
                   style={{ overflow: "visible" }}
                   onMouseEnter={() => setLogoHover(true)}
                   onMouseLeave={() => setLogoHover(false)}
+                  style={{ width: 200, overflow: "visible" }}
                 >
                   <g id="Group_154" transform="translate(-43 -88)">
                     <g id="Group_153" transform="translate(43 88)">
