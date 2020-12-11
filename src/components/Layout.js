@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { createGlobalStyle } from "styled-components"
 import reset from "../assets/styles/reset"
 import global from "../assets/styles/global"
@@ -12,6 +12,14 @@ const GlobalStyles = createGlobalStyle`
 
 const Layout = ({ children, whiteLogo, monoLogo }) => {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const html = typeof window !== "undefined" && document.querySelector("html")
+
+  useEffect(() => {
+    menuOpen
+      ? (html.style.overflow = "hidden")
+      : (html.style.overflow = "visible")
+  }, [menuOpen])
 
   return (
     <>
