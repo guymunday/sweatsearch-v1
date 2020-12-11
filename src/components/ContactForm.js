@@ -55,7 +55,7 @@ const ContactForm = () => {
           />
         </svg>
         <Wrapper>
-          <form>
+          <form netlify>
             <span className="name-email">
               <input
                 style={{ flex: 1 }}

@@ -36,7 +36,8 @@ const NewsletterContainer = styled(motion.section)`
     }
   }
   p {
-    margin: 30px 0;
+    margin: 30px auto;
+    max-width: 550px;
   }
   form {
     display: flex;
@@ -200,7 +201,11 @@ const Newsletter = () => {
             </svg>
           </span>
         </h3>
-        <p>Lorem Ipsum</p>
+        <p>
+          What's in it for you? By subscribing to our newsletter you ensure that
+          you are the first to hear about product release dates, events and
+          promotional sales.
+        </p>
         <form>
           <motion.input
             className="email"
