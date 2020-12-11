@@ -50,6 +50,9 @@ const HeroFlex = styled.div`
   h1 {
     font-size: 8rem;
     position: relative;
+    @media screen and (max-width: 600px) {
+      font-size: 6rem;
+    }
     span {
       position: relative;
       span {
@@ -61,6 +64,9 @@ const HeroFlex = styled.div`
         left: -1%;
         width: 76%;
         z-index: 3;
+        @media screen and (max-width: 600px) {
+          top: 30%;
+        }
       }
       .behind-svg {
         position: absolute;
@@ -68,6 +74,9 @@ const HeroFlex = styled.div`
         left: -1%;
         width: 76%;
         z-index: 1;
+        @media screen and (max-width: 600px) {
+          top: 10%;
+        }
       }
     }
   }
@@ -77,10 +86,16 @@ const HeroFlex = styled.div`
   }
   .button-flex {
     display: flex;
-    gap: 30px;
     @media screen and (max-width: 600px) {
       flex-direction: column;
-      width: 60%;
+      width: 100%;
+    }
+    a:first-child {
+      margin-right: 30px;
+      @media screen and (max-width: 600px) {
+        margin-bottom: 30px;
+        margin-right: 0;
+      }
     }
   }
 `
@@ -199,12 +214,8 @@ const HomepageHero = ({ data }) => {
           </h1>
           <div dangerouslySetInnerHTML={{ __html: data.paragraph }} />
           <div className="button-flex">
-            <Button link="/">
-              <i class="fas fa-mobile-alt"></i>Sign up as PT
-            </Button>
-            <Button link="/">
-              <i class="fas fa-mobile-alt"></i>Sign up as client
-            </Button>
+            <Button link="/">Sign up as PT</Button>
+            <Button link="/">Sign up as client</Button>
           </div>
         </HeroFlex>
       </Wrapper>

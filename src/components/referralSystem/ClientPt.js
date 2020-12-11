@@ -24,11 +24,17 @@ const PlanInner = styled.div`
   padding: 150px 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     padding: 100px 0;
+  }
+  .thumb:first-child {
+    margin-right: 30px;
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
   }
   .thumb {
     border: 1px solid var(--white);

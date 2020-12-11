@@ -37,7 +37,6 @@ const NavStyles = styled(motion.nav)`
     display: flex;
     padding: 30px 60px;
     flex-direction: column;
-    gap: 16px;
     a {
       color: var(--white);
       font-family: var(--heading);
@@ -45,6 +44,13 @@ const NavStyles = styled(motion.nav)`
       font-size: 3rem;
       display: inline-block;
       position: relative;
+      margin-bottom: 16px;
+      @media screen and (max-width: 800px) {
+        font-size: 2.2rem;
+      }
+      :last-child {
+        margin-bottom: 0;
+      }
       :hover {
         .underline-svg {
           opacity: 1;

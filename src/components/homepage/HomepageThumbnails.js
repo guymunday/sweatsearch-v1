@@ -13,9 +13,16 @@ export const ThumbFlex = styled.div`
   flex-wrap: wrap;
   padding: 100px 0;
   justify-content: space-between;
-  gap: 30px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
+  }
+  .inner:first-child,
+  .inner:nth-child(2) {
+    margin-right: 30px;
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
   }
   .inner {
     flex: 0 0 30%;
