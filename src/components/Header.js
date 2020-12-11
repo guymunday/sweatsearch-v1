@@ -10,6 +10,7 @@ import {
   useTransform,
 } from "framer-motion"
 import ButtonA from "./buttons/ButtonA"
+import { useMediaQuery } from "../hooks/useMediaQuery"
 
 const HeaderWrapper = styled(motion.header)`
   position: fixed;
@@ -21,6 +22,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
+  align-items: baseline;
   .hamburger {
     transition: 0.3s ease;
   }
@@ -31,6 +33,11 @@ const HeaderContainer = styled.header`
     display: flex;
     gap: 30px;
     align-items: center;
+    .sign-up {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
     .sign-up:hover {
       color: var(--green) !important;
     }
@@ -39,6 +46,8 @@ const HeaderContainer = styled.header`
 
 const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
   const [logoHover, setLogoHover] = useState(false)
+
+  const isSmall = useMediaQuery("(max-width: 768px)")
 
   const { scrollY } = useViewportScroll()
   const headerBackground = useTransform(scrollY, [0, 150], [1, 0])
@@ -59,7 +68,11 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
               >
                 <g id="Group_154" transform="translate(-43 -88)">
                   <g id="Group_153" transform="translate(43 88)">
-                    <g id="Group_151" transform="translate(24.938 3.965)">
+                    <g
+                      id="Group_151"
+                      transform="translate(24.938 3.965)"
+                      style={{ display: isSmall ? "none" : "inline-block" }}
+                    >
                       <path
                         id="Path_129"
                         fill={whiteLogo || monoLogo ? "#ffffff" : "#68DB7E"}
