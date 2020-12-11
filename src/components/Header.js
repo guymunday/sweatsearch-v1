@@ -91,7 +91,6 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
                   x="0px"
                   y="0px"
                   viewBox="0 0 119.664 19.932"
-                  style={{ overflow: "visible" }}
                   onMouseEnter={() => setLogoHover(true)}
                   onMouseLeave={() => setLogoHover(false)}
                   style={{ width: 200, overflow: "visible" }}

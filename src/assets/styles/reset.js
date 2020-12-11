@@ -113,6 +113,7 @@ const reset = css`
   input[type="text"],
   input[type="button"],
   input[type="submit"],
+  input[type="email"],
   .input-checkbox {
     -webkit-appearance: none;
     border-radius: 0;

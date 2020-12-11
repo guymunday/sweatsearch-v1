@@ -40,7 +40,6 @@ const NewsletterContainer = styled(motion.section)`
   }
   form {
     display: flex;
-    gap: 1rem;
     justify-content: center;
     @media screen and (max-width: 500px) {
       flex-direction: column;
@@ -51,7 +50,9 @@ const NewsletterContainer = styled(motion.section)`
       padding: 5px;
       flex: 2;
       max-width: 350px;
+      margin-right: 1rem;
       @media screen and (max-width: 500px) {
+        margin-right: 0;
         margin-bottom: 1rem;
         width: 100%;
       }
