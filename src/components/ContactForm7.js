@@ -1,123 +1,8 @@
 import React from "react"
-import styled from "styled-components"
-import Wrapper from "../Wrapper"
+import { SubmitRefWrapper } from "../components/references/SubmitReference"
+import Wrapper from "../components/Wrapper"
 
-export const SubmitRefWrapper = styled.div`
-  width: 100%;
-  min-height: 90vh;
-  background: var(--green);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  h2 {
-    font-size: 5rem;
-    max-width: 400px;
-    position: relative;
-    @media screen and (max-width: 768px) {
-      font-size: 4rem;
-    }
-    span {
-      position: relative;
-      span {
-        span {
-          position: relative;
-          z-index: 2;
-        }
-        svg {
-          position: absolute;
-          top: 30%;
-          left: 0;
-          z-index: 1;
-        }
-      }
-    }
-  }
-  p {
-    max-width: 400px;
-    margin: 30px 0;
-  }
-  .svg {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    @media screen and (max-width: 600px) {
-      display: none;
-    }
-  }
-  form {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    .name-email {
-      display: flex;
-      margin-bottom: 1rem;
-      @media screen and (max-width: 500px) {
-        flex-direction: column;
-      }
-      .name {
-        margin-right: 0.5rem;
-        @media screen and (max-width: 500px) {
-          margin-right: 0;
-          margin-bottom: 1rem;
-        }
-      }
-      .email {
-        margin-left: 0.5rem;
-        @media screen and (max-width: 500px) {
-          margin-left: 0;
-        }
-      }
-      .name,
-      .email {
-        flex: 1;
-        background: transparent;
-        border: 1px var(--black) solid;
-        padding: 5px;
-        ::placeholder {
-          color: var(--black);
-          padding: 5px;
-          font-family: var(--body);
-          font-size: 1rem;
-        }
-      }
-    }
-    textarea {
-      background: transparent;
-      border: 1px var(--black) solid;
-      padding: 5px;
-      margin-bottom: 1rem;
-      ::placeholder {
-        color: var(--black);
-        padding: 0 5px;
-        font-family: var(--body);
-        font-size: 1rem;
-      }
-    }
-    .submit {
-      display: inline-block;
-      input {
-        border: none;
-        background: var(--black);
-        color: var(--white);
-        padding: 6px 28px;
-        border-radius: 23px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: 0.3s ease;
-        :hover {
-          color: var(--black);
-          background: var(--white);
-        }
-      }
-    }
-  }
-`
-
-export default class SubmitReference extends React.Component {
+export default class ContactFormSeven extends React.Component {
   constructor(props) {
     super(props)
     this.submitForm = this.submitForm.bind(this)
@@ -134,9 +19,8 @@ export default class SubmitReference extends React.Component {
           <Wrapper>
             <h2>
               <span>
-                Sumbmit your own{" "}
                 <span>
-                  <span>reference</span>
+                  <span>Contact</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="234.811"
@@ -185,26 +69,23 @@ export default class SubmitReference extends React.Component {
             <form
               onSubmit={this.submitForm}
               method="POST"
-              action="http://3.250.192.195/wp-json/contact-form-7/v1/contact-forms/324/feedback"
+              action="http://3.250.192.195/wp-json/contact-form-7/v1/contact-forms/323/feedback"
             >
               <span className="name-email">
                 <input
-                  style={{ flex: 1 }}
                   type="text"
-                  name="your-name"
                   placeholder="Name"
+                  name="your-name"
                   className="name"
                 />
                 <input
-                  style={{ flex: 1 }}
                   type="email"
-                  name="your-email"
                   placeholder="Email"
+                  name="your-email"
                   className="email"
                 />
               </span>
-              <textarea placeholder="Your story" name="your-message" rows="4" />
-              {/* <input type="file" /> */}
+              <textarea placeholder="Message" rows="4" name="your-message" />
               <span className="submit">
                 {status === "SUCCESS" ? (
                   <p>We've got your message. Thanks!</p>

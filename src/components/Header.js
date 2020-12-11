@@ -72,11 +72,7 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
                 >
                   <g id="Group_154" transform="translate(-43 -88)">
                     <g id="Group_153" transform="translate(43 88)">
-                      <g
-                        id="Group_151"
-                        transform="translate(24.938 3.965)"
-                        style={{ display: isSmall ? "none" : "inline-block" }}
-                      >
+                      <g id="Group_151" transform="translate(24.938 3.965)">
                         <path
                           id="Path_129"
                           fill={whiteLogo || monoLogo ? "#ffffff" : "#68DB7E"}

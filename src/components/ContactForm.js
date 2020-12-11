@@ -55,27 +55,29 @@ const ContactForm = () => {
           />
         </svg>
         <Wrapper>
-          <form netlify>
+          <form
+            method="post"
+            action="http://3.250.192.195/wp-json/contact-form-7/v1/contact-forms/323/feedback"
+          >
             <span className="name-email">
               <input
                 style={{ flex: 1 }}
                 type="text"
-                name="name"
+                name="your-name"
                 placeholder="Name"
                 className="name"
               />
               <input
                 style={{ flex: 1 }}
                 type="email"
-                name="email"
+                name="your-email"
                 placeholder="Email"
                 className="email"
               />
             </span>
-            <textarea placeholder="Your message" name="message" rows="4" />
-            {/* <input type="file" /> */}
+            <textarea placeholder="Your message" name="your-message" rows="4" />
             <span className="submit">
-              <input type="submit" />
+              <input type="submit"/>
             </span>
           </form>
         </Wrapper>
