@@ -12,12 +12,11 @@ const FooterInner = styled.div`
   padding: 60px 0;
   display: flex;
   justify-content: space-between;
-  gap: 60px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
   .contact {
-    flex: 2;
+    flex: 1;
     .contact-inner {
       margin-top: 30px;
       display: flex;
@@ -26,7 +25,12 @@ const FooterInner = styled.div`
     }
   }
   .footer-menu {
-    flex: 2;
+    flex: 1;
+    .title {
+      @media screen and (max-width: 768px) {
+        margin-top: 60px;
+      }
+    }
     .footer-menu-inner {
       display: flex;
       flex-wrap: wrap;
@@ -192,7 +196,7 @@ const Footer = () => {
             />
           </div>
           <div className="footer-menu">
-            <p>Menu</p>
+            <p className="title">Menu</p>
             <div className="footer-menu-inner">
               {footerData.allWpAcf.nodes[0].footer.footerMenu.map(
                 (m, index) => {
@@ -206,7 +210,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-menu">
-            <p>Social</p>
+            <p className="title">Social</p>
             <div className="footer-menu-inner">
               {footerData.allWpAcf.nodes[0].footer.socialLinks.map(
                 (s, index) => {

@@ -15,6 +15,9 @@ export const SubmitRefWrapper = styled.div`
     font-size: 5rem;
     max-width: 400px;
     position: relative;
+    @media screen and (max-width: 768px) {
+      font-size: 4rem;
+    }
     span {
       position: relative;
       span {
@@ -49,10 +52,25 @@ export const SubmitRefWrapper = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 600px;
-    gap: 1rem;
     .name-email {
       display: flex;
-      gap: 1rem;
+      margin-bottom: 1rem;
+      @media screen and (max-width: 500px) {
+        flex-direction: column;
+      }
+      .name {
+        margin-right: 0.5rem;
+        @media screen and (max-width: 500px) {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
+      .email {
+        margin-left: 0.5rem;
+        @media screen and (max-width: 500px) {
+          margin-left: 0;
+        }
+      }
       .name,
       .email {
         flex: 1;
@@ -71,6 +89,7 @@ export const SubmitRefWrapper = styled.div`
       background: transparent;
       border: 1px var(--black) solid;
       padding: 5px;
+      margin-bottom: 1rem;
       ::placeholder {
         color: var(--black);
         padding: 0 5px;

@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import Ripple from "./Ripple"
-import { Link } from "gatsby"
 
-const ButtonStyled = styled(Link)`
+const ButtonStyled = styled.a`
   overflow: hidden;
   outline: none;
   position: relative;

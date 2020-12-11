@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
-import { BenefitsSection } from "../theSystem/BenefitsSection"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 
 const ImageSection = styled.section`

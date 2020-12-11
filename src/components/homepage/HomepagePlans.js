@@ -16,7 +16,7 @@ const PlanSection = styled.section`
     z-index: 1;
     width: 70%;
     @media screen and (max-width: 768px) {
-      top: -10%;
+      top: -3%;
     }
   }
 `
@@ -26,6 +26,8 @@ const PlanInner = styled.div`
   padding: 150px 0;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 2;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -44,6 +46,7 @@ const PlanInner = styled.div`
     flex: 1;
     border-radius: 10px;
     padding: 30px;
+    background: var(--green);
     .divider {
       display: block;
       height: 1px;
@@ -94,63 +97,56 @@ const HomepagePlans = ({ data }) => {
   const animation = useAnimation()
 
   const [featured, inView] = useInView({
-    threshold: 0.1,
+    threshold: 0.2,
     triggerOnce: true,
   })
 
   useEffect(() => {
     if (inView) {
-      animation.start({
-        x: 0,
-        opacity: 1,
-        transition: {
-          duration: 0.4,
-        },
-      })
+      const sequence = async () => {
+        await animation.start(i => ({
+          x: 0,
+          opacity: 1,
+          transition: {
+            duration: 0.6,
+            delay: i * 0.2,
+          },
+        }))
+      }
+      sequence()
     }
   }, [animation, inView])
 
   return (
     <PlanSection ref={featured}>
-      <motion.svg
-        className="banner-svg"
-        width="900.701"
-        height="253.059"
-        viewBox="0 0 900.701 253.059"
-        initial={{ x: -1000, opacity: 0 }}
-        animate={animation}
-      >
-        <g
-          id="Group_136"
-          data-name="Group 136"
-          transform="translate(110.168 -1349.702)"
-        >
-          <path
-            id="Path_120"
-            data-name="Path 120"
-            d="M509.729,250.835,321.435-2.2l48.824-.024,64.531.024L622.136,250.835Z"
-            transform="translate(-431.604 1351.926)"
+      <svg className="banner-svg" x="0px" y="0px" viewBox="0 0 900.701 253.059">
+        <g transform="translate(110.168 -1349.702)">
+          <motion.path
+            custom={3}
+            initial={{ opacity: 0, x: "-600%" }}
+            animate={animation}
+            d="M78.125,1602.761l-188.294-253.035l48.824-0.024l64.531,0.024l187.346,253.035H78.125z"
           />
-          <path
-            id="Path_123"
-            data-name="Path 123"
-            d="M509.729,250.835,321.435-2.2l48.824-.024,64.531.024L622.136,250.835Z"
-            transform="translate(-30.604 1351.926)"
+          <motion.path
+            custom={1}
+            initial={{ opacity: 0, x: "-600%" }}
+            animate={animation}
+            d="M479.125,1602.761l-188.294-253.035l48.824-0.024l64.531,0.024l187.346,253.035H479.125z"
           />
-          <path
-            id="Path_121"
-            data-name="Path 121"
-            d="M509.729,250.835,321.435-2.2l48.824-.024,64.531.024L622.136,250.835Z"
-            transform="translate(-232.604 1351.926)"
+          <motion.path
+            custom={2}
+            initial={{ opacity: 0, x: "-600%" }}
+            animate={animation}
+            d="M277.125,1602.761L88.831,1349.726l48.824-0.024l64.531,0.024l187.346,253.035H277.125z"
           />
-          <path
-            id="Path_122"
-            data-name="Path 122"
-            d="M509.729,250.835,321.435-2.2l48.824-.024,64.531.024L622.136,250.835Z"
-            transform="translate(168.396 1351.926)"
+          <motion.path
+            custom={0}
+            initial={{ opacity: 0, x: "-600%" }}
+            animate={animation}
+            d="M678.125,1602.761l-188.294-253.035l48.824-0.024l64.531,0.024l187.346,253.035H678.125z"
           />
         </g>
-      </motion.svg>
+      </svg>
       <Wrapper>
         <PlanInner>
           {data.map((p, index) => {

@@ -108,6 +108,11 @@ const reset = css`
   [hidden] {
     display: none !important;
   }
+  input[type="text"],
+  input[type="button"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
 `
 
 export default reset
