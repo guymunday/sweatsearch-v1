@@ -19,7 +19,7 @@ const Layout = ({ children, whiteLogo, monoLogo }) => {
     menuOpen
       ? (html.style.overflow = "hidden")
       : (html.style.overflow = "visible")
-  }, [menuOpen])
+  })
 
   return (
     <>

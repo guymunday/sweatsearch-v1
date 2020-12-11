@@ -51,10 +51,22 @@ const SmallPrint = styled.div`
     background: var(--white);
     width: 100%;
   }
-  div {
-    text-align: right;
+  .bottom-footer {
+    display: flex;
     color: var(--white);
     padding: 30px 0 60px 0;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+    .policy {
+      @media screen and (max-width: 768px) {
+        margin-bottom: 16px;
+      }
+      a:nth-child(2) {
+        margin: 0 16px;
+      }
+    }
   }
 `
 
@@ -78,6 +90,15 @@ const Footer = () => {
                 platform
               }
             }
+          }
+        }
+      }
+      allWpPolicy {
+        edges {
+          node {
+            slug
+            title
+            id
           }
         }
       }
@@ -226,11 +247,23 @@ const Footer = () => {
         </FooterInner>
         <SmallPrint>
           <span className="line"></span>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: footerData.allWpAcf.nodes[0].footer.smallPrint,
-            }}
-          />
+          <div className="bottom-footer">
+            <div className="policy">
+              {footerData.allWpPolicy.edges.reverse().map((p, index) => {
+                return (
+                  <Link key={index} to={`/${p.node.slug}`}>
+                    {p.node.title}
+                  </Link>
+                )
+              })}
+            </div>
+            <div
+              className="small-print"
+              dangerouslySetInnerHTML={{
+                __html: footerData.allWpAcf.nodes[0].footer.smallPrint,
+              }}
+            />
+          </div>
         </SmallPrint>
       </Wrapper>
     </StyledFooter>
