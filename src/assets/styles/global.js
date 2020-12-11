@@ -43,7 +43,7 @@ const globalCss = css`
 
   ul {
     list-style: none;
-    padding-left: 1em;
+    padding-left: 1.7rem;
   }
   li {
     line-height: 2;
@@ -57,6 +57,7 @@ const globalCss = css`
       background-repeat: no-repeat;
       margin-right: 0.5em;
       margin-bottom: -0.4em;
+      margin-left: -1.7rem;
     }
   }
   a {
