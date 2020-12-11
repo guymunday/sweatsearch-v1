@@ -12,14 +12,15 @@ import SubmitReference from "../components/references/SubmitReference"
 const HeroReferenceContainer = styled.div`
   margin-top: 100px;
   display: flex;
-  gap: 30px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
   .copy {
     flex: 1;
+    margin: 0 30px 0 0;
     @media screen and (max-width: 768px) {
       order: 2;
+      margin: 30px 0 0 0;
     }
     h2 {
       font-size: 3rem;

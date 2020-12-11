@@ -13,6 +13,9 @@ const CopyImageContainer = styled.div`
     align-self: center;
     max-width: 500px;
     margin: 30px;
+    @media screen and (max-width: 768px) {
+      margin: 30px 0;
+    }
   }
   .image {
     flex: 1;

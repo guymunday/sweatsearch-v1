@@ -13,7 +13,7 @@ export const Title = styled.div`
     font-size: 5rem;
     z-index: 2;
     @media screen and (max-width: 768px) {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     svg {
       position: absolute;
