@@ -117,12 +117,17 @@ const BenefitsFlex = styled.div`
     .benefit-thumbs {
       margin-top: 100px;
       display: flex;
-      gap: 30px;
       @media screen and (max-width: 768px) {
         flex-direction: column;
       }
       .thumb {
         position: relative;
+        :nth-child(2) {
+          margin: 0 30px;
+          @media screen and (max-width: 768px) {
+            margin: 30px 0;
+          }
+        }
         svg {
           position: absolute;
           width: 50%;
@@ -151,6 +156,7 @@ const BenefitsFlex = styled.div`
 
 const BenefitsSection = ({ background, copy }) => {
   const isSmall = useMediaQuery("(min-width: 768px)")
+  const isXSmall = useMediaQuery("(min-width: 400px)")
 
   return (
     <BenefitsSectionStyles>
@@ -246,7 +252,10 @@ const BenefitsSection = ({ background, copy }) => {
                       width="45.335"
                       height="66.236"
                       viewBox="0 0 45.335 66.236"
-                      style={{ top: -25, left: isSmall ? -25 : -140 }}
+                      style={{
+                        top: -25,
+                        left: isSmall ? -25 : isXSmall ? -150 : -100,
+                      }}
                     >
                       <g
                         id="Group_142"

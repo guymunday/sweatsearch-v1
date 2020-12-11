@@ -4,7 +4,6 @@ import Img from "gatsby-image"
 
 const CopyImageContainer = styled.div`
   display: flex;
-  gap: 30px;
   margin: 60px auto;
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -13,6 +12,7 @@ const CopyImageContainer = styled.div`
     flex: 1;
     align-self: center;
     max-width: 500px;
+    margin: 30px;
   }
   .image {
     flex: 1;

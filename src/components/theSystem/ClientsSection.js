@@ -52,7 +52,7 @@ const ClientsSectionStyles = styled.section`
       max-width: 400px;
       position: relative;
       @media screen and (max-width: 768px) {
-        margin: 50px 0 100px 0;
+        margin: 50px 0;
       }
       h1,
       h2,
