@@ -35,8 +35,11 @@ const NavStyles = styled(motion.nav)`
   }
   .links {
     display: flex;
-    padding: 30px 60px;
+    padding: 0px 60px;
     flex-direction: column;
+    @media screen and (max-width: 800px) {
+      padding: 0 30px;
+    }
     a {
       color: var(--white);
       font-family: var(--heading);

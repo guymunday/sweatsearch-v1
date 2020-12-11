@@ -25,8 +25,9 @@ const HeaderContainer = styled.header`
   align-items: baseline;
   .logo {
     width: 200px;
+    height: 50px;
     @media screen and (max-width: 768px) {
-      width: 50px;
+      width: 30px;
     }
     svg {
       width: 100%;

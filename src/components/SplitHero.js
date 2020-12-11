@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 
 const SplitHeroWrapper = styled.section`
   display: flex;
-  gap: 30px;
   min-height: 100vh;
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -15,6 +14,7 @@ const SplitHeroWrapper = styled.section`
     align-self: center;
     display: flex;
     flex-direction: column;
+    padding: 30px;
     @media screen and (max-width: 768px) {
       height: 400px;
       order: 2;
@@ -41,8 +41,8 @@ const SplitHeroWrapper = styled.section`
       order: 1;
     }
     .gatsby-image-wrapper {
-      min-height: 100%;
-      min-width: 100%;
+      height: 100%;
+      width: 100%;
     }
   }
 `

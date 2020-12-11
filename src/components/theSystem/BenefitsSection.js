@@ -62,6 +62,9 @@ export const BenefitsSectionStyles = styled.section`
     @media screen and (max-width: 768px) {
       bottom: -16%;
     }
+    @media screen and (max-width: 500px) {
+      bottom: -20%;
+    }
   }
 `
 
