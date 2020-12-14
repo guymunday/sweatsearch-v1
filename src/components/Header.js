@@ -162,7 +162,12 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
                       <g id="Group_152" transform="translate(0 0)">
                         <motion.path
                           initial={{ y: 0 }}
-                          animate={{ y: logoHover ? -70 : 0 }}
+                          animate={{
+                            y: logoHover ? [-70, 0] : 0,
+                            transition: {
+                              duration: 0.4,
+                            },
+                          }}
                           id="Path_140"
                           fill={whiteLogo || monoLogo ? "#ffffff" : "#68DB7E"}
                           d="M11.513,11.968c-0.533-1.376-2.749-3.79-4.366-5.552
@@ -175,9 +180,9 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
                         <motion.path
                           initial={{ opacity: 1 }}
                           animate={{
-                            opacity: logoHover ? 0 : 1,
+                            opacity: logoHover ? [0, 1] : 1,
                             transition: {
-                              duration: 0.1,
+                              duration: 1,
                             },
                           }}
                           fill={whiteLogo ? "#68DB7E" : "#000000"}

@@ -1,6 +1,7 @@
 import React from "react"
 import { ThumbFlex } from "../homepage/HomepageThumbnails"
 import Img from "gatsby-image"
+import { motion } from "framer-motion"
 
 const Thumbnails = ({ data, title }) => {
   return (
@@ -8,7 +9,11 @@ const Thumbnails = ({ data, title }) => {
       <ThumbFlex>
         {data.edges.map((r, index) => {
           return (
-            <div className="inner" key={index}>
+            <motion.div
+              className="inner"
+              key={index}
+              whileHover={{ scale: 1.05 }}
+            >
               <Img
                 fluid={r.node.refImage.image.localFile.childImageSharp.fluid}
                 alt={r.node.title}
@@ -81,7 +86,7 @@ const Thumbnails = ({ data, title }) => {
                 )}
               </h3>
               <div dangerouslySetInnerHTML={{ __html: r.node.content }} />
-            </div>
+            </motion.div>
           )
         })}
       </ThumbFlex>
