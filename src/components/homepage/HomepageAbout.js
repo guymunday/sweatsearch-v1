@@ -5,6 +5,8 @@ import Wrapper from "../Wrapper"
 import Button from "../buttons/Button"
 import ParallaxBox from "../ParallaxBox"
 import { motion } from "framer-motion"
+import { useMediaQuery } from "../../hooks/useMediaQuery"
+import ButtonApp from "../buttons/ButtonApp"
 
 export const AppSection = styled.section`
   display: flex;
@@ -21,11 +23,16 @@ export const AppSection = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    @media screen and (max-width: 600px) {
+      max-width: 100%;
+      width: 100%;
+    }
     .copy {
       max-width: 350px;
       position: relative;
       @media screen and (max-width: 600px) {
         max-width: 100%;
+        width: 100%;
       }
       h1,
       h2,
@@ -62,14 +69,30 @@ export const AppSection = styled.section`
       width: 100%;
     }
   }
+  .button-flex {
+    display: flex;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+    }
+    a:first-child {
+      margin-right: 30px;
+      @media screen and (max-width: 768px) {
+        margin-bottom: 30px;
+        margin-right: 0;
+      }
+    }
+  }
 `
 
 const HomepageAbout = ({ data }) => {
+  const isSmall = useMediaQuery("(min-width: 768px)")
+
   return (
     <Wrapper>
       <AppSection>
         <div className="app-mockup">
-          <ParallaxBox yOffset={150} triggerPoint={0.7}>
+          <ParallaxBox yOffset={isSmall ? 150 : 50} triggerPoint={0.7}>
             <Img
               fluid={data.appImage.localFile.childImageSharp.fluid}
               alt="SweatSearch App"
@@ -95,7 +118,10 @@ const HomepageAbout = ({ data }) => {
               </g>
             </svg>
             <div dangerouslySetInnerHTML={{ __html: data.paragraph }} />
-            <Button link="the-system">The system</Button>
+            <div className="button-flex">
+              <Button link="the-system">The system</Button>
+              <ButtonApp />
+            </div>
           </div>
         </div>
       </AppSection>
