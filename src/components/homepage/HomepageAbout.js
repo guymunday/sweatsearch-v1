@@ -2,11 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import Wrapper from "../Wrapper"
-import Button from "../buttons/Button"
+// import Button from "../buttons/Button"
 import ParallaxBox from "../ParallaxBox"
 import { motion } from "framer-motion"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
-import ButtonApp from "../buttons/ButtonApp"
+// import ButtonApp from "../buttons/ButtonApp"
+
+import AppStore from "../../assets/svgs/appstore.svg"
+import Google from "../../assets/svgs/google.svg"
 
 export const AppSection = styled.section`
   display: flex;
@@ -71,13 +74,17 @@ export const AppSection = styled.section`
   }
   .button-flex {
     display: flex;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 500px) {
       flex-direction: column;
       width: 100%;
     }
+    a {
+      flex: 1;
+      max-width: 150px;
+    }
     a:first-child {
       margin-right: 30px;
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 500px) {
         margin-bottom: 30px;
         margin-right: 0;
       }
@@ -119,8 +126,24 @@ const HomepageAbout = ({ data }) => {
             </svg>
             <div dangerouslySetInnerHTML={{ __html: data.paragraph }} />
             <div className="button-flex">
-              <Button link="the-system">The system</Button>
-              <ButtonApp />
+              {/* <Button link="the-system">The system</Button>
+              <ButtonApp /> */}
+              <motion.a
+                href="https://www.sweatsearch.com"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ scale: 1.05 }}
+              >
+                <img src={Google} />
+              </motion.a>
+              <motion.a
+                href="https://www.sweatsearch.com"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ scale: 1.05 }}
+              >
+                <img src={AppStore} />
+              </motion.a>
             </div>
           </div>
         </div>
