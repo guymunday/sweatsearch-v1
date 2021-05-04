@@ -83,7 +83,7 @@ const NewsletterContainer = styled(motion.section)`
   }
 `
 
-const Newsletter = () => {
+const Newsletter = ({ input }) => {
   const animation = useAnimation()
   const animationInput = useAnimation()
   const animationButton = useAnimation()
@@ -201,11 +201,15 @@ const Newsletter = () => {
             </svg>
           </span>
         </h3>
-        <p>
-          What's in it for you? By subscribing to our newsletter you ensure that
-          you are the first to hear about product release dates, events and
-          promotional sales.
-        </p>
+        {input?.copy ? (
+          <div dangerouslySetInnerHTML={{ __html: input?.copy }} />
+        ) : (
+          <p>
+            What's in it for you? By subscribing to our newsletter you ensure
+            that you are the first to hear about product release dates, events
+            and promotional sales.
+          </p>
+        )}
         <form>
           <motion.input
             className="email"

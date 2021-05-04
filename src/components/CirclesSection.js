@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 
 const CirclesSectionStyles = styled.section`
   width: 100%;
@@ -103,7 +103,7 @@ const CirclesSectionStyles = styled.section`
   }
 `
 
-const CirclesSection = ({ image, copy }) => {
+const CirclesSection = ({ input }) => {
   return (
     <CirclesSectionStyles>
       <motion.svg
@@ -147,13 +147,16 @@ const CirclesSection = ({ image, copy }) => {
 
           <div
             dangerouslySetInnerHTML={{
-              __html: copy,
+              __html: input?.copy,
             }}
           />
         </div>
       </div>
       <div className="image">
-        <Img fluid={image} alt="" />
+        <Img
+          fluid={input?.image?.localFile?.childImageSharp?.fluid}
+          alt="SweatSearch"
+        />
       </div>
       <motion.svg
         version="1.1"

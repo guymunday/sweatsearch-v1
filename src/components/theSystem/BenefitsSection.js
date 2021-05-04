@@ -157,13 +157,15 @@ const BenefitsFlex = styled.div`
   }
 `
 
-const BenefitsSection = ({ background, copy }) => {
+const BenefitsSection = ({ input }) => {
   const isSmall = useMediaQuery("(min-width: 768px)")
   const isXSmall = useMediaQuery("(min-width: 400px)")
-
   return (
     <BenefitsSectionStyles>
-      <BackgroundImg fluid={background} style={{ position: "absolute" }} />
+      <BackgroundImg
+        fluid={input?.backgroundImage?.localFile?.childImageSharp?.fluid}
+        style={{ position: "absolute" }}
+      />
       <div className="overlay"></div>
       <BenefitsFlex>
         <div className="benefits-inner">
@@ -204,7 +206,7 @@ const BenefitsSection = ({ background, copy }) => {
             </svg>
           </h3>
           <div className="benefit-thumbs">
-            {copy.map((c, index) => {
+            {input?.thumbnails?.map((c, index) => {
               return (
                 <div className="thumb" key={index}>
                   {index === 0 ? (
@@ -276,7 +278,7 @@ const BenefitsSection = ({ background, copy }) => {
                   )}
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: c.benefit,
+                      __html: c?.thumbnail,
                     }}
                   />
                 </div>

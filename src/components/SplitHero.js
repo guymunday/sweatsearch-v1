@@ -52,7 +52,7 @@ const SplitHeroWrapper = styled.section`
   }
 `
 
-const SplitHero = ({ title, image, copy }) => {
+const SplitHero = ({ input, title }) => {
   return (
     <SplitHeroWrapper>
       <div className="copy">
@@ -86,11 +86,14 @@ const SplitHero = ({ title, image, copy }) => {
               />
             </g>
           </svg>
-          <p>{copy}</p>
+          <p>{input?.introParagraph}</p>
         </div>
       </div>
       <div className="image">
-        <Img fluid={image} alt={title} />
+        <Img
+          fluid={input?.image?.localFile?.childImageSharp?.fluid}
+          alt={title}
+        />
       </div>
     </SplitHeroWrapper>
   )

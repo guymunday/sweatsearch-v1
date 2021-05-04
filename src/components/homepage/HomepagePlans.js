@@ -93,7 +93,7 @@ const PlanInner = styled.div`
   }
 `
 
-const HomepagePlans = ({ data }) => {
+const HomepagePlans = ({ input }) => {
   const animation = useAnimation()
 
   const [featured, inView] = useInView({
@@ -149,15 +149,15 @@ const HomepagePlans = ({ data }) => {
       </svg>
       <Wrapper>
         <PlanInner>
-          {data.map((p, index) => {
+          {input?.plansThumbnails?.map((p, index) => {
             return (
               <div className="thumb" key={index}>
                 <p>
-                  <span className="price">{p.plan.price}</span> / Month
+                  <span className="price">{p.plans.price}</span> / Month
                 </p>
                 <div className="plan-type">
                   <span className="plan-type-inner">
-                    <span>{p.plan.planType}</span>
+                    <span>{p.plans.planType}</span>
                     {index === 1 ? (
                       <svg
                         width="102.238"
@@ -191,13 +191,8 @@ const HomepagePlans = ({ data }) => {
                     )}
                   </span>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: p.plan.description }} />
-                <span className="divider"></span>
-                <div
-                  className="bullets"
-                  dangerouslySetInnerHTML={{ __html: p.plan.bulletPoints }}
-                />
-                <ButtonInvert link={p.plan.link}>Find out more</ButtonInvert>
+                <div dangerouslySetInnerHTML={{ __html: p.plans.description }} />
+                <ButtonInvert link={p.plans.link}>Find out more</ButtonInvert>
               </div>
             )
           })}

@@ -50,12 +50,12 @@ export const ThumbFlex = styled.div`
   }
 `
 
-const HomepageThumbnails = ({ data }) => {
+const HomepageThumbnails = ({ input }) => {
   return (
     <ThumbSection>
       <Wrapper>
         <ThumbFlex>
-          {data.map((t, index) => {
+          {input?.thumbnails?.map((t, index) => {
             return (
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -63,11 +63,11 @@ const HomepageThumbnails = ({ data }) => {
                 key={index}
               >
                 <Img
-                  fluid={t.image.localFile.childImageSharp.fluid}
-                  alt={t.title}
+                  fluid={t?.image?.localFile?.childImageSharp?.fluid}
+                  alt={t?.title}
                 />
                 <h3>
-                  {t.title}
+                  {t?.title}
                   {index === 0 ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ const HomepageThumbnails = ({ data }) => {
                     </svg>
                   )}
                 </h3>
-                <p>{t.info}</p>
+                <p>{t?.information}</p>
               </motion.div>
             )
           })}

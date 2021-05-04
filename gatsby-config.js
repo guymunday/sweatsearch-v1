@@ -20,7 +20,7 @@ module.exports = {
     },
     `babel-plugin-styled-components`,
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         url: `http://3.250.192.195/graphql`,
         verbose: true,

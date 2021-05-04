@@ -59,7 +59,7 @@ const PlanInner = styled.div`
   }
 `
 
-const ClientPt = ({ data }) => {
+const ClientPt = ({ input }) => {
   return (
     <PlanSection>
       <svg
@@ -101,13 +101,12 @@ const ClientPt = ({ data }) => {
       </svg>
       <Wrapper>
         <PlanInner>
-          {data.map((p, index) => {
-            console.log(p)
+          {input?.thumbnails?.map((p, index) => {
             return (
               <div
                 key={index}
                 className="thumb"
-                dangerouslySetInnerHTML={{ __html: p.copy }}
+                dangerouslySetInnerHTML={{ __html: p?.copy }}
               />
             )
           })}

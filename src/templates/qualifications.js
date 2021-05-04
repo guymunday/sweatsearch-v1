@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Wrapper from "../components/Wrapper"
 import Layout from "../components/Layout"
-import SliceZone from "../components/qualifications/SliceZone"
 import styled from "styled-components"
 import Newsletter from "../components/Newsletter"
 
@@ -53,7 +52,6 @@ const QualificationsTemplate = ({ data }) => {
             </svg>
           </h1>
         </Title>
-        <SliceZone allSlices={data.allWpAcf.edges[0].node.flexible.content} />
       </Wrapper>
       <Newsletter />
     </Layout>

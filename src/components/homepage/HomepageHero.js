@@ -134,8 +134,8 @@ const HomepageHero = ({ data }) => {
             left: "40%",
             transition: {
               duration: 60,
-              yoyo: Infinity,
               ease: "linear",
+              repeat: Infinity,
             },
           }}
         >

@@ -92,23 +92,23 @@ export const AppSection = styled.section`
   }
 `
 
-const HomepageAbout = ({ data }) => {
+const HomepageAbout = ({ input }) => {
   const isSmall = useMediaQuery("(min-width: 768px)")
-
+  
   return (
     <Wrapper>
       <AppSection>
         <div className="app-mockup">
           <ParallaxBox yOffset={isSmall ? 150 : 50} triggerPoint={0.7}>
             <Img
-              fluid={data.appImage.localFile.childImageSharp.fluid}
+              fluid={input?.appImage?.localFile?.childImageSharp?.fluid}
               alt="SweatSearch App"
             />
           </ParallaxBox>
         </div>
         <div className="inner">
           <div className="copy">
-            <h2>{data.title}</h2>
+            <h2>{input?.title}</h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="209.231"
@@ -124,7 +124,7 @@ const HomepageAbout = ({ data }) => {
                 />
               </g>
             </svg>
-            <div dangerouslySetInnerHTML={{ __html: data.paragraph }} />
+            <div dangerouslySetInnerHTML={{ __html: input?.paragraph }} />
             <div className="button-flex">
               {/* <Button link="the-system">The system</Button>
               <ButtonApp /> */}

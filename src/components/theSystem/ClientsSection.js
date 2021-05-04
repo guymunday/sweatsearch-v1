@@ -80,7 +80,7 @@ const ClientsSectionStyles = styled.section`
   }
 `
 
-const ClientsSection = ({ image, copy }) => {
+const ClientsSection = ({ input }) => {
   const isSmall = useMediaQuery("(max-width: 768px)")
 
   return (
@@ -104,7 +104,10 @@ const ClientsSection = ({ image, copy }) => {
         endPoint={1000}
         className="image"
       >
-        <Img fluid={image} alt="clients" />
+        <Img
+          fluid={input?.image?.localFile?.childImageSharp?.fluid}
+          alt="clients"
+        />
       </ParallaxUpDown>
       <div className="copy">
         <div className="copy-inner">
@@ -124,7 +127,7 @@ const ClientsSection = ({ image, copy }) => {
           </svg>
           <div
             dangerouslySetInnerHTML={{
-              __html: copy,
+              __html: input?.copy,
             }}
           />
         </div>
