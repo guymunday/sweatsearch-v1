@@ -3,12 +3,7 @@ import Wrapper from "./Wrapper"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Navigation from "./Navigation"
-import {
-  motion,
-  AnimatePresence,
-  useViewportScroll,
-  useTransform,
-} from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import ButtonA from "./buttons/ButtonA"
 import { useMediaQuery } from "../hooks/useMediaQuery"
 
@@ -16,6 +11,21 @@ const HeaderWrapper = styled(motion.header)`
   position: fixed;
   width: 100%;
   z-index: 999;
+`
+
+const HeaderShadow = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 998;
+  pointer-events: none;
 `
 
 const HeaderContainer = styled.header`
@@ -52,11 +62,9 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
 
   const isSmall = useMediaQuery("(min-width: 768px)")
 
-  const { scrollY } = useViewportScroll()
-  const headerBackground = useTransform(scrollY, [0, 150], [1, 0])
-
   return (
     <>
+      <HeaderShadow />
       <HeaderWrapper>
         <Wrapper>
           <HeaderContainer>

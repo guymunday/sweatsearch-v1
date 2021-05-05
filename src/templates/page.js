@@ -50,6 +50,11 @@ export const PAGE_QUERY = graphql`
               button {
                 link
                 text
+                icon {
+                  localFile {
+                    publicURL
+                  }
+                }
               }
             }
             image {

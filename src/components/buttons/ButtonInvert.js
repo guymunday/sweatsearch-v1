@@ -22,9 +22,9 @@ const ButtonStyled = styled(Link)`
   }
 `
 
-function ButtonInvert({ link, children }) {
+function ButtonInvert({ link, children, ...rest }) {
   return (
-    <ButtonStyled to={link}>
+    <ButtonStyled to={link} {...rest}>
       {children} <Ripple color={"#fff"} duration={1000} />
     </ButtonStyled>
   )

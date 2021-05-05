@@ -7,6 +7,10 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
           buttons {
             button {
               fieldGroupName
+              icon {
+                __typename
+                id
+              }
               link
               text
             }

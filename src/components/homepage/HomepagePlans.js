@@ -42,7 +42,7 @@ const PlanInner = styled.div`
   }
   .thumb {
     border: 1px solid var(--white);
-    max-width: 300px;
+    max-width: 350px;
     flex: 1;
     border-radius: 10px;
     padding: 30px;
@@ -152,9 +152,13 @@ const HomepagePlans = ({ input }) => {
           {input?.plansThumbnails?.map((p, index) => {
             return (
               <div className="thumb" key={index}>
-                <p>
-                  <span className="price">{p.plans.price}</span> / Month
-                </p>
+                {p.plans.price ? (
+                  <p>
+                    <span className="price">{p.plans.price}</span> / Month
+                  </p>
+                ) : (
+                  <p className="price">Free</p>
+                )}
                 <div className="plan-type">
                   <span className="plan-type-inner">
                     <span>{p.plans.planType}</span>
@@ -191,8 +195,12 @@ const HomepagePlans = ({ input }) => {
                     )}
                   </span>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: p.plans.description }} />
-                <ButtonInvert link={p.plans.link}>Find out more</ButtonInvert>
+                <div
+                  dangerouslySetInnerHTML={{ __html: p.plans.description }}
+                />
+                <ButtonInvert style={{ marginTop: 30 }} link={p.plans.link}>
+                  Find out more
+                </ButtonInvert>
               </div>
             )
           })}

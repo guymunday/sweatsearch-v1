@@ -4,6 +4,7 @@ import reset from "../assets/styles/reset"
 import global from "../assets/styles/global"
 import Header from "./Header"
 import Footer from "./Footer"
+import useGeoLocation from "react-ipgeolocation"
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
@@ -12,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
 
 const Layout = ({ children, whiteLogo, monoLogo }) => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useGeoLocation()
 
   const html = typeof window !== "undefined" && document.querySelector("html")
 
@@ -21,6 +23,10 @@ const Layout = ({ children, whiteLogo, monoLogo }) => {
       : (html.style.overflow = "visible")
   })
 
+  useEffect(() => {
+    console.log(location.country)
+  })
+  
   return (
     <>
       <GlobalStyles />
@@ -30,7 +36,7 @@ const Layout = ({ children, whiteLogo, monoLogo }) => {
         whiteLogo={whiteLogo}
         monoLogo={monoLogo}
       />
-      <main>{children}</main>
+      <main style={{ overflow: "hidden" }}>{children}</main>
       <Footer />
     </>
   )

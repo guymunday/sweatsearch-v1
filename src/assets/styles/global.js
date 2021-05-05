@@ -33,7 +33,7 @@ const globalCss = css`
     font-family: var(--heading);
     font-weight: 400;
     text-transform: uppercase;
-    line-height: 0.8;
+    line-height: 0.9;
     position: relative;
 
   }

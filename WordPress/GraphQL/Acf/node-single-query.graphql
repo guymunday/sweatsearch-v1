@@ -23,39 +23,6 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     dateGmt
     desiredSlug
     enclosure
-    flexible {
-      content {
-        __typename
-        ... on Acf_Flexible_Content_Copy {
-          copy
-          fieldGroupName
-        }
-        ... on Acf_Flexible_Content_CopyAndImage {
-          copy
-          fieldGroupName
-          image {
-            __typename
-            id
-          }
-        }
-        ... on Acf_Flexible_Content_Image {
-          fieldGroupName
-          image {
-            __typename
-            id
-          }
-        }
-        ... on Acf_Flexible_Content_ImageAndCopy {
-          copy
-          fieldGroupName
-          image {
-            __typename
-            id
-          }
-        }
-      }
-      fieldGroupName
-    }
     footer {
       contactDetails
       fieldGroupName
@@ -77,22 +44,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
         }
       }
     }
-    generate {
-      fieldGroupName
-      generate
-    }
     guid
-    heroSection {
-      fieldGroupName
-      hero {
-        fieldGroupName
-        image {
-          __typename
-          id
-        }
-        introParagraph
-      }
-    }
     homepage {
       fieldGroupName
       fullBleedSections {
@@ -179,61 +131,8 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     }
     parentDatabaseId
     parentId
-    referral {
-      clientPt {
-        copy
-        fieldGroupName
-      }
-      credits {
-        copy
-        fieldGroupName
-        image {
-          __typename
-          id
-        }
-      }
-      fieldGroupName
-      ratingSystem {
-        appImage {
-          __typename
-          id
-        }
-        copy
-        fieldGroupName
-      }
-    }
     slug
     status
-    system {
-      benefits {
-        backgroundImage {
-          __typename
-          id
-        }
-        benefits {
-          benefit
-          fieldGroupName
-        }
-        fieldGroupName
-      }
-      clients {
-        copy
-        fieldGroupName
-        image {
-          __typename
-          id
-        }
-      }
-      fieldGroupName
-      trainers {
-        copy
-        fieldGroupName
-        image {
-          __typename
-          id
-        }
-      }
-    }
     template {
       templateName
       __typename

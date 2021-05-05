@@ -4,6 +4,7 @@ import Button from "../buttons/Button"
 import Wrapper from "../Wrapper"
 import Img from "gatsby-image"
 import { motion, useTransform, useViewportScroll } from "framer-motion"
+import icon from "../../assets/svgs/small-logo.svg"
 
 const HeroContainer = styled.section`
   width: 100%;
@@ -217,7 +218,14 @@ const HomepageHero = ({ input }) => {
           <div className="button-flex">
             {input?.buttons.map((b, i) => {
               return (
-                <Button key={b?.button?.links} link={b?.button?.link}>
+                <Button key={b?.button?.link} link={b?.button?.link}>
+                  {b?.button?.icon?.localFile?.publicURL && (
+                    <img
+                      style={{ height: 25, marginRight: 20 }}
+                      src={b?.button?.icon?.localFile?.publicURL}
+                      alt=""
+                    />
+                  )}
                   {b?.button?.text}
                 </Button>
               )
