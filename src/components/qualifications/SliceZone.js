@@ -16,6 +16,7 @@ import ImageAndCopy from "./slices/ImageAndCopy"
 import Wrapper from "../Wrapper"
 import CopyAndImage from "./slices/CopyAndImage"
 import BasicTitle from "../BasicTitle"
+import HomepageHero from "../homepage/HomepageHero"
 
 const Content = styled.div``
 
@@ -23,7 +24,10 @@ export default class SliceZone extends Component {
   render() {
     const { allSlices, title } = this.props
     const slice = allSlices.map(s => {
+      console.log(s)
       switch (s.fieldGroupName) {
+        case "content_page_AcfContent_ContentBlocks_HomepageHero":
+          return <HomepageHero input={s} />
         case "content_page_AcfContent_ContentBlocks_SplitImageHero":
           return <SplitHero input={s} title={title} />
         case "content_page_AcfContent_ContentBlocks_AppImageAndButtons":

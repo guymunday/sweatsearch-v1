@@ -16,13 +16,13 @@ const globalCss = css`
   }
 
   body {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
     font-style: normal;
     font-family: var(--body);
     width: 100%;
     overflow-x: hidden;
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -35,18 +35,28 @@ const globalCss = css`
     text-transform: uppercase;
     line-height: 0.8;
     position: relative;
+
   }
 
   p {
     position: relative;
+    font-size: inherit;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
   }
 
   ul {
     list-style: none;
     padding-left: 1.7rem;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
   }
   li {
-    line-height: 2;
+    line-height: inherit;
     &:before {
       content: "";
       display: inline-block;

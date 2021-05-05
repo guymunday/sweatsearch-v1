@@ -63,7 +63,7 @@ const SmallPrint = styled.div`
       @media screen and (max-width: 768px) {
         margin-bottom: 16px;
       }
-      a:nth-child(2) {
+      a:nth-child(even) {
         margin: 0 16px;
       }
     }

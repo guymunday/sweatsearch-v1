@@ -37,7 +37,7 @@ const NewsletterContainer = styled(motion.section)`
   }
   p {
     margin: 30px auto;
-    max-width: 550px;
+    max-width: 500px;
   }
   form {
     display: flex;

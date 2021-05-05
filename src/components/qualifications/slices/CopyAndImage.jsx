@@ -13,6 +13,17 @@ const CopyImageContainer = styled.div`
     align-self: center;
     max-width: 500px;
     margin: 30px;
+          h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 3rem;
+      }
+      p, ul {
+        margin-top: 30px;
+      }
     @media screen and (max-width: 768px) {
       margin: 30px 0;
     }

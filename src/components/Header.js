@@ -57,7 +57,7 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
 
   return (
     <>
-      <HeaderWrapper style={{ opacity: headerBackground }}>
+      <HeaderWrapper>
         <Wrapper>
           <HeaderContainer>
             <Link to="/" className="logo">

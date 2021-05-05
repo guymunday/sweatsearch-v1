@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Wrapper from "../components/Wrapper"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import SliceZone from "../components/qualifications/SliceZone"
@@ -25,7 +24,7 @@ export const Title = styled.div`
 
 const PageTemplate = ({ data }) => {
   return (
-    <Layout>
+    <Layout whiteLogo>
       <SliceZone
         allSlices={data?.page?.acf_content?.contentBlocks}
         title={data?.page?.title}
@@ -44,6 +43,25 @@ export const PAGE_QUERY = graphql`
       id
       acf_content {
         contentBlocks {
+          ... on WpContent_page_AcfContent_ContentBlocks_HomepageHero {
+            copy
+            fieldGroupName
+            buttons {
+              button {
+                link
+                text
+              }
+            }
+            image {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1200, quality: 90) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+          }
           ... on WpContent_page_AcfContent_ContentBlocks_BasicPageTitle {
             basicHero
             fieldGroupName

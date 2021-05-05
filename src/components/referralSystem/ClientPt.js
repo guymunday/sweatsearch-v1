@@ -41,7 +41,7 @@ const PlanInner = styled.div`
   }
   .thumb {
     border: 1px solid var(--white);
-    max-width: 300px;
+    max-width: 400px;
     flex: 1;
     border-radius: 10px;
     padding: 30px;
@@ -51,9 +51,10 @@ const PlanInner = styled.div`
     h4,
     h5,
     h6 {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
-    p {
+    p,
+    ul {
       margin-top: 30px;
     }
   }

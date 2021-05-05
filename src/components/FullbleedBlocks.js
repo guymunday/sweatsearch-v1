@@ -20,7 +20,7 @@ const FullbleedInner = styled.div`
     }
   }
   p {
-    max-width: 400px;
+    max-width: 450px;
     margin: 30px 0;
   }
 `

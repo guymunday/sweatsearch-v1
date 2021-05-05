@@ -91,7 +91,7 @@ const CirclesSectionStyles = styled.section`
       h6 {
         font-size: 3rem;
       }
-      p {
+      p, ul {
         margin-top: 30px;
       }
       .client-svg {

@@ -116,15 +116,16 @@ const pathVariants = {
   },
 }
 
-const HomepageHero = ({ data }) => {
+const HomepageHero = ({ input }) => {
   const { scrollYProgress } = useViewportScroll()
   const x = useTransform(scrollYProgress, [0, 1], [0, 4000])
 
+  console.log(input)
   return (
     <HeroContainer>
       <HeroBackground>
         <Img
-          fluid={data.backgroundImage.localFile.childImageSharp.fluid}
+          fluid={input?.image?.localFile?.childImageSharp?.fluid}
           alt="SweatSearch"
         />
         <motion.div
@@ -212,10 +213,15 @@ const HomepageHero = ({ data }) => {
               </svg>
             </span>
           </h1>
-          <div dangerouslySetInnerHTML={{ __html: data.paragraph }} />
+          <div dangerouslySetInnerHTML={{ __html: input?.copy }} />
           <div className="button-flex">
-            <Button link="/">Sign up as PT</Button>
-            <Button link="/">Sign up as client</Button>
+            {input?.buttons.map((b, i) => {
+              return (
+                <Button key={b?.button?.links} link={b?.button?.link}>
+                  {b?.button?.text}
+                </Button>
+              )
+            })}
           </div>
         </HeroFlex>
       </Wrapper>
