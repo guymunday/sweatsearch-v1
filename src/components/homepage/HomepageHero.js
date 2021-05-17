@@ -218,7 +218,15 @@ const HomepageHero = ({ input }) => {
           <div className="button-flex">
             {input?.buttons.map((b, i) => {
               return (
-                <Button key={b?.button?.link} link={b?.button?.link}>
+                <a
+                  key={b?.button?.link}
+                  href={b?.button?.link}
+                  className={
+                    b?.button?.text.includes("client")
+                      ? "client-button"
+                      : "pt-button"
+                  }
+                >
                   {b?.button?.icon?.localFile?.publicURL && (
                     <img
                       style={{ height: 25, marginRight: 20 }}
@@ -227,7 +235,7 @@ const HomepageHero = ({ input }) => {
                     />
                   )}
                   {b?.button?.text}
-                </Button>
+                </a>
               )
             })}
           </div>

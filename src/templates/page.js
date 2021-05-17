@@ -91,7 +91,15 @@ export const PAGE_QUERY = graphql`
               plans {
                 description
                 fieldGroupName
-                link
+                button {
+                  link
+                  text
+                  icon {
+                    localFile {
+                      publicURL
+                    }
+                  }
+                }
                 planType
                 price
               }

@@ -50,9 +50,17 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
             plansThumbnails {
               fieldGroupName
               plans {
+                button {
+                  fieldGroupName
+                  icon {
+                    __typename
+                    id
+                  }
+                  link
+                  text
+                }
                 description
                 fieldGroupName
-                link
                 planType
                 price
               }

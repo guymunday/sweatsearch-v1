@@ -49,9 +49,17 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
           plansThumbnails {
             fieldGroupName
             plans {
+              button {
+                fieldGroupName
+                icon {
+                  __typename
+                  id
+                }
+                link
+                text
+              }
               description
               fieldGroupName
-              link
               planType
               price
             }

@@ -4,6 +4,7 @@ import ButtonInvert from "../buttons/ButtonInvert"
 import Wrapper from "../Wrapper"
 import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
+import useGeoLocation from "react-ipgeolocation"
 
 const PlanSection = styled.section`
   width: 100%;
@@ -95,6 +96,7 @@ const PlanInner = styled.div`
 
 const HomepagePlans = ({ input }) => {
   const animation = useAnimation()
+  const location = useGeoLocation()
 
   const [featured, inView] = useInView({
     threshold: 0.2,
@@ -152,16 +154,20 @@ const HomepagePlans = ({ input }) => {
           {input?.plansThumbnails?.map((p, index) => {
             return (
               <div className="thumb" key={index}>
-                {p.plans.price ? (
+                {p?.plans?.price ? (
                   <p>
-                    <span className="price">{p.plans.price}</span> / Month
+                    <span className="price">
+                      {location.country !== "GB" ? "$" : "£"}
+                      {p?.plans?.price}
+                    </span>{" "}
+                    / Month
                   </p>
                 ) : (
                   <p className="price">Free</p>
                 )}
                 <div className="plan-type">
                   <span className="plan-type-inner">
-                    <span>{p.plans.planType}</span>
+                    <span>{p?.plans?.planType}</span>
                     {index === 1 ? (
                       <svg
                         width="102.238"
@@ -196,11 +202,28 @@ const HomepagePlans = ({ input }) => {
                   </span>
                 </div>
                 <div
-                  dangerouslySetInnerHTML={{ __html: p.plans.description }}
+                  dangerouslySetInnerHTML={{ __html: p?.plans?.description }}
                 />
-                <ButtonInvert style={{ marginTop: 30 }} link={p.plans.link}>
-                  Find out more
-                </ButtonInvert>
+                {p?.plans?.button?.link && (
+                  <a
+                    style={{ marginTop: 30 }}
+                    href={p?.plans?.button?.link}
+                    className={
+                      p?.plans?.button?.text.includes("client")
+                        ? "client-button client-button-alt"
+                        : "pt-button pt-button-alt"
+                    }
+                  >
+                    {p?.plans?.button?.icon?.localFile?.publicURL && (
+                      <img
+                        style={{ height: 25, marginRight: 20 }}
+                        src={p?.plans?.button?.icon?.localFile?.publicURL}
+                        alt=""
+                      />
+                    )}
+                    {p?.plans?.button?.text}
+                  </a>
+                )}
               </div>
             )
           })}

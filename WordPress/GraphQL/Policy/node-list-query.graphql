@@ -42,6 +42,10 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       }
       parentDatabaseId
       parentId
+      policy {
+        australianPolicy
+        fieldGroupName
+      }
       slug
       status
       template {

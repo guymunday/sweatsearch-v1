@@ -41,6 +41,10 @@ query PREVIEW_QUERY($id: ID!) {
     }
     parentDatabaseId
     parentId
+    policy {
+      australianPolicy
+      fieldGroupName
+    }
     slug
     status
     template {
