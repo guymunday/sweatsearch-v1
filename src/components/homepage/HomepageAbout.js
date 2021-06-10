@@ -137,7 +137,7 @@ const HomepageAbout = ({ input }) => {
                 <img src={Google} />
               </motion.a>
               <motion.a
-                href="https://www.sweatsearch.com"
+                href="https://apps.apple.com/gb/app/sweatsearch/id1546839513"
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{ scale: 1.05 }}
