@@ -45,63 +45,6 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
       }
     }
     guid
-    homepage {
-      fieldGroupName
-      fullBleedSections {
-        fieldGroupName
-        section {
-          backgroundImage {
-            __typename
-            id
-          }
-          copy
-          fieldGroupName
-          link
-          title
-        }
-      }
-      heroSection {
-        backgroundImage {
-          __typename
-          id
-        }
-        fieldGroupName
-        paragraph
-      }
-      image {
-        __typename
-        id
-      }
-      plans {
-        fieldGroupName
-        plan {
-          bulletPoints
-          description
-          fieldGroupName
-          link
-          planType
-          price
-        }
-      }
-      thumbnails {
-        fieldGroupName
-        image {
-          __typename
-          id
-        }
-        info
-        title
-      }
-      whatIsSweatsearch {
-        appImage {
-          __typename
-          id
-        }
-        fieldGroupName
-        paragraph
-        title
-      }
-    }
     id
     lastEditedBy {
       node {

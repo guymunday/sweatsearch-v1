@@ -13,6 +13,7 @@ export default class ContactFormSeven extends React.Component {
 
   render() {
     const { status } = this.state
+    const copy = this.props.contactCopy
     return (
       <SubmitRefWrapper>
         <div style={{ padding: "100px 0" }}>
@@ -43,14 +44,10 @@ export default class ContactFormSeven extends React.Component {
                 </span>
               </span>
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur
-            </p>
+            <div
+              style={{ maxWidth: 600, padding: "30px 0" }}
+              dangerouslySetInnerHTML={{ __html: copy }}
+            />
           </Wrapper>
           <svg
             className="svg"
@@ -69,7 +66,7 @@ export default class ContactFormSeven extends React.Component {
             <form
               onSubmit={this.submitForm}
               method="POST"
-              action="http://3.250.192.195/wp-json/contact-form-7/v1/contact-forms/323/feedback"
+              action="http://35.176.17.22/wp-json/contact-form-7/v1/contact-forms/323/feedback"
             >
               <span className="name-email">
                 <input

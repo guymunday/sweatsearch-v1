@@ -91,15 +91,8 @@ const globalCss = css`
     text-align: center;
     line-height: 1;
     text-decoration: none;
-    :hover {
-      color: var(--black);
-      background: var(--green);
-    }
+
     &.client-button-alt {
-      :hover {
-        background: var(--white);
-        color: var(--black);
-      }
     }
   }
 
@@ -117,15 +110,8 @@ const globalCss = css`
     text-align: center;
     line-height: 1;
     text-decoration: none;
-    :hover {
-      color: var(--black);
-      background: var(--green);
-    }
+
     &.pt-button-alt {
-      :hover {
-        background: var(--black);
-        color: var(--white);
-      }
     }
   }
 `

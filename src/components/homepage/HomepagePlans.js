@@ -69,11 +69,12 @@ const PlanInner = styled.div`
         span {
           position: relative;
           z-index: 3;
+          font-size: 1.6rem;
         }
         .scribble-one {
           z-index: 1;
           position: absolute;
-          left: -30%;
+          left: -1%;
           top: 10%;
         }
         .scribble-two {

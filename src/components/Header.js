@@ -240,7 +240,7 @@ const Header = ({ menuOpen, setMenuOpen, whiteLogo, monoLogo }) => {
               </svg>
             </Link>
             <div className="buttons">
-              <ButtonA link="https://www.sweatsearch.com">Go to app</ButtonA>
+            
               <a
                 className="sign-up"
                 href="https://www.sweatsearch.com"
