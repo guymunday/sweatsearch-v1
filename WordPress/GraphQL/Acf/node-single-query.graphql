@@ -1,0 +1,127 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  acf(id: $id) {
+    ancestors(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    wpChildren: children(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    content
+    contentType {
+      node {
+        id
+      }
+    }
+    databaseId
+    date
+    dateGmt
+    desiredSlug
+    enclosure
+    footer {
+      contactDetails
+      fieldGroupName
+      footerMenu {
+        fieldGroupName
+        menuItems {
+          fieldGroupName
+          link
+          menuItem
+        }
+      }
+      smallPrint
+      socialLinks {
+        fieldGroupName
+        socialLink {
+          fieldGroupName
+          link
+          platform
+        }
+      }
+    }
+    guid
+    id
+    lastEditedBy {
+      node {
+        id
+      }
+    }
+    link
+    menu {
+      fieldGroupName
+      menuItems {
+        fieldGroupName
+        menuItem {
+          fieldGroupName
+          link
+          pageName
+        }
+      }
+      signUpLink
+    }
+    modified
+    modifiedGmt
+    wpParent: parent {
+      node {
+        id
+        __typename
+      }
+    }
+    parentDatabaseId
+    parentId
+    seo {
+      breadcrumbs {
+        text
+        url
+      }
+      canonical
+      cornerstone
+      focuskw
+      fullHead
+      metaDesc
+      metaKeywords
+      metaRobotsNofollow
+      metaRobotsNoindex
+      opengraphAuthor
+      opengraphDescription
+      opengraphImage {
+        __typename
+        id
+      }
+      opengraphModifiedTime
+      opengraphPublishedTime
+      opengraphPublisher
+      opengraphSiteName
+      opengraphTitle
+      opengraphType
+      opengraphUrl
+      readingTime
+      schema {
+        articleType
+        pageType
+        raw
+      }
+      title
+      twitterDescription
+      twitterImage {
+        __typename
+        id
+      }
+      twitterTitle
+    }
+    slug
+    status
+    template {
+      templateName
+      __typename
+    }
+    title
+    uri
+    __typename
+  }
+}

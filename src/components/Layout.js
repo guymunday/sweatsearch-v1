@@ -6,6 +6,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import Helmet from "react-helmet"
 import favicon from "../assets/icon-48x48.png"
+import CookiesBanner from "./CookiesBanner"
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
@@ -38,6 +39,7 @@ const Layout = ({ children, whiteLogo, monoLogo }) => {
       />
       <main style={{ overflow: "hidden" }}>{children}</main>
       <Footer />
+      <CookiesBanner />
     </>
   )
 }

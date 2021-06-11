@@ -11,7 +11,7 @@ const Policy = ({ data }) => {
   const location = useGeoLocation()
 
   return (
-    <Layout>
+    <Layout >
       <Seo post={data?.allWpPolicy?.edges[0]?.node} />
       <Wrapper>
         <PageTitle>{data?.allWpPolicy?.edges[0]?.node?.title}</PageTitle>

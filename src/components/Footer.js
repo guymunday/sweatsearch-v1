@@ -249,7 +249,7 @@ const Footer = () => {
           <span className="line"></span>
           <div className="bottom-footer">
             <div className="policy">
-              {footerData.allWpPolicy.edges.reverse().map((p, index) => {
+              {footerData.allWpPolicy.edges.map((p, index) => {
                 return (
                   <Link key={index} to={`/${p.node.slug}`}>
                     {p.node.title}
