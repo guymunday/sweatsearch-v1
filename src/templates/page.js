@@ -157,6 +157,7 @@ export const PAGE_QUERY = graphql`
             fieldGroupName
             image {
               localFile {
+                publicURL
                 childImageSharp {
                   fluid(maxWidth: 1200, quality: 90) {
                     ...GatsbyImageSharpFluid_withWebp

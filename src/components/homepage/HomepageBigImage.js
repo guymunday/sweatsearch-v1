@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 
 const ImageSection = styled.section`
@@ -11,7 +10,7 @@ const ImageSection = styled.section`
   position: relative;
 `
 
-export const BackgroundImageStyles = styled(BackgroundImage)`
+const BackgroundImageStyles = styled.div`
   width: 100%;
   height: 100%;
   top: 0;
@@ -61,17 +60,13 @@ const HomepageBigImage = ({ image }) => {
   const { scrollYProgress } = useViewportScroll()
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 2000])
 
-  const backgroundImage = [
-    image,
-    `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))`,
-  ].reverse()
-
   return (
-    <ImageSection style={{ backgroundImage: image }}>
+    <ImageSection>
       <BackgroundImageStyles
-        Tag="section"
-        fluid={backgroundImage}
-        backgroundColor={`var(--black)`}
+        style={{
+          backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${image})`,
+          color: "white",
+        }}
       >
         <motion.div className="circle-svg">
           <motion.div

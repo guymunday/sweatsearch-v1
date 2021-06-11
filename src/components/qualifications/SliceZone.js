@@ -35,10 +35,7 @@ export default class SliceZone extends Component {
           return <HomepagePlans key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_BigImage":
           return (
-            <HomepageBigImage
-              key={i}
-              image={s?.image?.localFile?.childImageSharp?.fluid}
-            />
+            <HomepageBigImage key={i} image={s?.image?.localFile?.publicURL} />
           )
         case "content_page_AcfContent_ContentBlocks_Thumbnails":
           return <HomepageThumbnails key={i} input={s} />
