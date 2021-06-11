@@ -56,7 +56,12 @@ const FullbleedCircles = ({ input }) => {
         animate={{
           x: [-30, -20, -10, 0, 10, 20, 30],
           y: [30, 20, 10, 0, -10, -20, -30],
-          transition: { yoyo: Infinity, duration: 3, ease: "linear" },
+          transition: {
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 3,
+            ease: "linear",
+          },
         }}
         version="1.1"
         x="0px"
@@ -84,7 +89,12 @@ const FullbleedCircles = ({ input }) => {
         animate={{
           y: [-30, -20, -10, 0, 10, 20, 30],
           x: [30, 20, 10, 0, -10, -20, -30],
-          transition: { yoyo: Infinity, duration: 3, ease: "linear" },
+          transition: {
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 3,
+            ease: "linear",
+          },
         }}
       >
         <g>

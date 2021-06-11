@@ -8,6 +8,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import Thumbnails from "../components/references/Thumbnails"
 import SubmitReference from "../components/references/SubmitReference"
+import { Helmet } from "react-helmet"
 
 const HeroReferenceContainer = styled.div`
   margin-top: 100px;
@@ -66,6 +67,9 @@ const Subtitle = styled.h2`
 const References = ({ data: { hero, ptReference, reference } }) => {
   return (
     <Layout>
+      <Helmet>
+        <title>References | SweatSearch</title>
+      </Helmet>
       <Wrapper>
         <PageTitle>References</PageTitle>
         <HeroReferenceContainer>

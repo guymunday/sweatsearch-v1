@@ -4,7 +4,8 @@ import reset from "../assets/styles/reset"
 import global from "../assets/styles/global"
 import Header from "./Header"
 import Footer from "./Footer"
-import useGeoLocation from "react-ipgeolocation"
+import Helmet from "react-helmet"
+import favicon from "../assets/icon-48x48.png"
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
@@ -13,7 +14,6 @@ const GlobalStyles = createGlobalStyle`
 
 const Layout = ({ children, whiteLogo, monoLogo }) => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const location = useGeoLocation()
 
   const html = typeof window !== "undefined" && document.querySelector("html")
 
@@ -23,13 +23,13 @@ const Layout = ({ children, whiteLogo, monoLogo }) => {
       : (html.style.overflow = "visible")
   })
 
-  useEffect(() => {
-    console.log(location.country)
-  })
-  
   return (
     <>
       <GlobalStyles />
+      <Helmet>
+        <title>SweatSearch</title>
+        <link rel="icon" href={favicon} type="image/png" />
+      </Helmet>
       <Header
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}

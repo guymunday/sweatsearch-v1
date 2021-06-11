@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Navigation from "./Navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import ButtonA from "./buttons/ButtonA"
 
 const HeaderWrapper = styled(motion.header)`
   position: fixed;

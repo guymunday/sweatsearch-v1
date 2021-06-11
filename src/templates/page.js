@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import SliceZone from "../components/qualifications/SliceZone"
+import Seo from "gatsby-plugin-wpgraphql-seo"
 
 export const Title = styled.div`
   padding: 150px 0 0 0;
@@ -24,12 +25,15 @@ export const Title = styled.div`
 
 const PageTemplate = ({ data }) => {
   return (
-    <Layout whiteLogo>
-      <SliceZone
-        allSlices={data?.page?.acf_content?.contentBlocks}
-        title={data?.page?.title}
-      />
-    </Layout>
+    <>
+      <Layout whiteLogo>
+        <Seo post={data?.page} />
+        <SliceZone
+          allSlices={data?.page?.acf_content?.contentBlocks}
+          title={data?.page?.title}
+        />
+      </Layout>
+    </>
   )
 }
 
@@ -38,6 +42,46 @@ export default PageTemplate
 export const PAGE_QUERY = graphql`
   query PageQuery($slug: String!) {
     page: wpContentPage(slug: { eq: $slug }) {
+      seo {
+        canonical
+        title
+        metaDesc
+        focuskw
+        metaRobotsNoindex
+        metaRobotsNofollow
+        opengraphAuthor
+        opengraphDescription
+        opengraphTitle
+        opengraphDescription
+        opengraphImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        opengraphUrl
+        opengraphSiteName
+        opengraphPublishedTime
+        opengraphModifiedTime
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          altText
+          sourceUrl
+          srcSet
+        }
+        breadcrumbs {
+          url
+          text
+        }
+        cornerstone
+        schema {
+          pageType
+          articleType
+          raw
+        }
+        readingTime
+        fullHead
+      }
       slug
       title
       id
@@ -48,6 +92,7 @@ export const PAGE_QUERY = graphql`
             fieldGroupName
             buttons {
               button {
+                appleLink
                 link
                 text
                 icon {
@@ -75,6 +120,8 @@ export const PAGE_QUERY = graphql`
             fieldGroupName
             paragraph
             title
+            androidLink
+            appleLink
             appImage {
               localFile {
                 childImageSharp {
@@ -92,6 +139,7 @@ export const PAGE_QUERY = graphql`
                 description
                 fieldGroupName
                 button {
+                  appleLink
                   link
                   text
                   icon {

@@ -1,10 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../buttons/Button"
 import Wrapper from "../Wrapper"
 import Img from "gatsby-image"
 import { motion, useTransform, useViewportScroll } from "framer-motion"
-import icon from "../../assets/svgs/small-logo.svg"
+import { isAndroid } from "react-device-detect"
 
 const HeroContainer = styled.section`
   width: 100%;
@@ -121,7 +120,6 @@ const HomepageHero = ({ input }) => {
   const { scrollYProgress } = useViewportScroll()
   const x = useTransform(scrollYProgress, [0, 1], [0, 4000])
 
-  console.log(input)
   return (
     <HeroContainer>
       <HeroBackground>
@@ -220,7 +218,7 @@ const HomepageHero = ({ input }) => {
               return (
                 <a
                   key={b?.button?.link}
-                  href={b?.button?.link}
+                  href={isAndroid ? b?.button?.link : b?.button?.appleLink}
                   className={
                     b?.button?.text.includes("client")
                       ? "client-button"

@@ -122,11 +122,7 @@ const Navigation = ({ setMenuOpen }) => {
           </button>
         </div>
         <div className="links">
-          <a
-            href={menuData.allWpAcf.nodes[0].menu.signUpLink}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={menuData.allWpAcf.nodes[0].menu.signUpLink}>
             Sign up
             <svg
               className="underline-svg"

@@ -94,7 +94,7 @@ export const AppSection = styled.section`
 
 const HomepageAbout = ({ input }) => {
   const isSmall = useMediaQuery("(min-width: 768px)")
-  
+
   return (
     <Wrapper>
       <AppSection>
@@ -126,23 +126,21 @@ const HomepageAbout = ({ input }) => {
             </svg>
             <div dangerouslySetInnerHTML={{ __html: input?.paragraph }} />
             <div className="button-flex">
-              {/* <Button link="the-system">The system</Button>
-              <ButtonApp /> */}
               <motion.a
-                href="https://www.sweatsearch.com"
+                href={input?.androidLink}
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{ scale: 1.05 }}
               >
-                <img src={Google} />
+                <img src={Google} alt="" />
               </motion.a>
               <motion.a
-                href="https://apps.apple.com/gb/app/sweatsearch/id1546839513"
+                href={input?.appleLink}
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{ scale: 1.05 }}
               >
-                <img src={AppStore} />
+                <img src={AppStore} alt="" />
               </motion.a>
             </div>
           </div>

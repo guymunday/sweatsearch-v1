@@ -23,54 +23,54 @@ const Content = styled.div``
 export default class SliceZone extends Component {
   render() {
     const { allSlices, title } = this.props
-    const slice = allSlices.map(s => {
-      console.log(s)
+    const slice = allSlices.map((s, i) => {
       switch (s.fieldGroupName) {
         case "content_page_AcfContent_ContentBlocks_HomepageHero":
-          return <HomepageHero input={s} />
+          return <HomepageHero key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_SplitImageHero":
-          return <SplitHero input={s} title={title} />
+          return <SplitHero key={i} input={s} title={title} />
         case "content_page_AcfContent_ContentBlocks_AppImageAndButtons":
-          return <HomepageAbout input={s} />
+          return <HomepageAbout key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_PlansThumbnails":
-          return <HomepagePlans input={s} />
+          return <HomepagePlans key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_BigImage":
           return (
             <HomepageBigImage
+              key={i}
               image={s?.image?.localFile?.childImageSharp?.fluid}
             />
           )
         case "content_page_AcfContent_ContentBlocks_Thumbnails":
-          return <HomepageThumbnails input={s} />
+          return <HomepageThumbnails key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_FullBleedCirclesSection":
-          return <FullbleedCircles input={s} />
+          return <FullbleedCircles key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_FullBleedBlockSection":
-          return <FullbleedBlocks input={s} />
+          return <FullbleedBlocks key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_BenefitsSection":
-          return <BenefitsSection input={s} />
+          return <BenefitsSection key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_BlockSection":
-          return <ClientsSection input={s} />
+          return <ClientsSection key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_CircleSection":
-          return <CirclesSection input={s} />
+          return <CirclesSection key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_Newsletter":
-          return <Newsletter input={s} />
+          return <Newsletter key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_BasicThumbnails":
-          return <ClientPt input={s} />
+          return <ClientPt key={i} input={s} />
         case "content_page_AcfContent_ContentBlocks_ImageAndCopy":
           return (
-            <Wrapper>
-              <ImageAndCopy input={s} />
+            <Wrapper key={i}>
+              <ImageAndCopy key={i} input={s} />
             </Wrapper>
           )
         case "content_page_AcfContent_ContentBlocks_CopyAndImage":
           return (
-            <Wrapper>
+            <Wrapper key={i}>
               <CopyAndImage input={s} />
             </Wrapper>
           )
         case "content_page_AcfContent_ContentBlocks_BasicPageTitle":
           return (
-            <Wrapper>
+            <Wrapper key={i}>
               <BasicTitle title={title} />
             </Wrapper>
           )

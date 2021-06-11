@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
-import ButtonInvert from "../buttons/ButtonInvert"
 import Wrapper from "../Wrapper"
 import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
 import useGeoLocation from "react-ipgeolocation"
+import { isAndroid } from "react-device-detect"
 
 const PlanSection = styled.section`
   width: 100%;
@@ -208,7 +208,11 @@ const HomepagePlans = ({ input }) => {
                 {p?.plans?.button?.link && (
                   <a
                     style={{ marginTop: 30 }}
-                    href={p?.plans?.button?.link}
+                    href={
+                      isAndroid
+                        ? p?.plans?.button?.link
+                        : p?.plans?.button?.appleLink
+                    }
                     className={
                       p?.plans?.button?.text.includes("client")
                         ? "client-button client-button-alt"
